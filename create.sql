@@ -64,9 +64,15 @@ create table enchantment{
     primary key (enchantment_id),
     max_level int
 }
-create table inventory{}
+create table inventory{
+    entity_instance_number int,
+    foreign key (entity_instance_number) references entity_instance (instance_number),
+    slot int,
+    item_instance_number int,
+    foreign key (item_instance_number) references item_instance (instance_number)
+}
 create table player{
-    instance_number unique not null,
+    instance_number int unique not null,
     foreign key (instance_number) references entity_instance(instance_number),
     username varchar(45) unique not null,
     health int,
@@ -101,6 +107,25 @@ create table creates_block{
     block_id int not null,
     foreign key (block_id) references block(block_id)
 }
-create table creates_entity{}
-create table entity_drops{}
-create table structure_made_of{}
+create table creates_entity{
+    item_id int not null,
+    foreign key (item_id) references item(item_id),
+    entity_id int,
+    foreign key (entity_id) references entity(entity_id)
+}
+create table entity_drops{
+    entity_id int,
+    foreign key (entity_id) references entity(entity_id),
+    item_id int,
+    foreign key (item_id) references item(item_id),
+}
+create table structure_made_of{
+    name varchar(45) not null,
+    foreign key (name) references structure (name),
+    block_id int not null,
+    foreign key (block_id) references block(block_id),
+    x int,
+    y int,
+    z int
+    
+}
