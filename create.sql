@@ -6,7 +6,10 @@ create table entity_instance{
     instance_number int not null,
     primary key (instance_number),
     entity_id int,
-    foreign key (entity_id) references entity(entity_id)
+    foreign key (entity_id) references entity(entity_id),
+    x float,
+    y float,
+    z float,
     }
 create table item{
     item_id int not null,
