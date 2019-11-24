@@ -95,7 +95,12 @@ create table block_drops{
     item_id int not null,
     foreign key (item_id) references item(item_id)
 }
-create table creates_block{}
+create table creates_block{
+    item_id int not null,
+    foreign key (item_id) references item(item_id),
+    block_id int not null,
+    foreign key (block_id) references block(block_id)
+}
 create table creates_entity{}
 create table entity_drops{}
 create table structure_made_of{}
