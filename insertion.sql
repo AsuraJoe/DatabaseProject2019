@@ -47,7 +47,52 @@ insert INTO item (item_name, max_stack,placeable) Values('Bow',0,true);
 insert INTO item_instance(stack, item_id) values (1,1);
 
 /*insert block*/
-insert INTO block(block_name, transparent, gravity) Values('Birch_log', true, true);
+/*idont know what gravity mean in here so i put all true*/
+insert INTO block(block_name, transparent, gravity) Values('Bricks', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Wood', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Cobblestone', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Button', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Door', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Fence', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Fence Gate', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Leaves', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Log', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Planks', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Pressure Plate', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Sapling', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Sign', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Activator Rail', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Flower', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Andesite', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Slab', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Stairs', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Wall', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Anvil', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Beacon', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Bamboo', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Carpet', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Bed', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Concrete Powder', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Glass', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Wool', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Block of Coal', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Block of Diamond', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Block of Emerald', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Block of Gold', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Block of Iron', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Bookshelf', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Cactus', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Chest', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Coarse Dirt', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Anvil', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Coal Ore', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Sandstone', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Dirt', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Furnace', true, true);
+insert INTO block(block_name, transparent, gravity) Values('Grass Block', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Gravel', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Prismarine', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Lapis Lazuli Ore', false, true);
 
 /*insert block_instance*/
 insert INTO block_instance(breaking_stage,x,y,z) Values(1,2,3,4);
