@@ -68,7 +68,7 @@ insert INTO block(block_name, transparent, gravity) Values('Slab', false, true);
 insert INTO block(block_name, transparent, gravity) Values('Stairs', true, true);
 insert INTO block(block_name, transparent, gravity) Values('Wall', true, true);
 insert INTO block(block_name, transparent, gravity) Values('Anvil', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Beacon', false, true);
+insert INTO block(block_name, transparent, gravity) Values('Beacon', true, false);
 insert INTO block(block_name, transparent, gravity) Values('Bamboo', false, true);
 insert INTO block(block_name, transparent, gravity) Values('Carpet', true, true);
 insert INTO block(block_name, transparent, gravity) Values('Bed', true, true);
