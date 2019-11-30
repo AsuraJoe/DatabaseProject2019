@@ -1,10 +1,13 @@
 set FOREIGN_KEY_CHECKS =0;
 
 /*entity*/
-insert INTO entity() Values();
+insert INTO entity(entity_id, entity_name) Values(1,'Dropped Item');
+insert INTO entity(entity_id, entity_name) Values(2, 'Experience Orb');
+insert INTO entity(entity_id, entity_name) Values(30, 'Armor Stand');
 
 /*entity_instance*/
 insert INTO entity_instance( entity_id,x,y,z)Values(1,1.1,1.2,1.3);
+insert INTO entity_instance( entity_id,x,y,z)Values(30,5,5,5);
 
 /*insert item*/
 /*Placable means it can be placed*/ 
@@ -168,7 +171,9 @@ insert INTO biome_blocks(name, block_id) Values ('Badlands',37);
 insert INTO structure(name, biome)values ('Mineshaft','Overworld');
 insert INTO structure(name, biome)values ('Stronghold','Any');
 insert INTO structure(name, biome)values ('Fossil','Desert');
-insert INTO structure(name, biome)values ('Buried treasure','Beach, Snowy Beach, Ocean, Stone Shore');
+insert INTO structure(name, biome)values ('Buried treasure','Beach');
+insert INTO structure(name, biome)values ('Buried treasure','Snowy Beach');
+insert INTO structure(name, biome)values ('Buried treasure','Ocean');
 insert INTO structure(name, biome)values ('Ocean ruin','Ocean, Beach');
 insert INTO structure(name, biome)values ('Shipwreck','Ocean, Beach');
 insert INTO structure(name, biome)values ('Ocean Monument','Deep Ocean');
@@ -179,7 +184,7 @@ insert INTO structure(name, biome)values ('Village','Plains, Desert, Taipa');
 insert INTO structure(name, biome)values ('Swamp hut','Swamp');
 insert INTO structure(name, biome)values ('Woodland mansion','Deep Forest');
 insert INTO structure(name, biome)values ('Dungeon','Any');
-insert INTO structure(name, biome)values ('Fortress','The Nether');
+insert INTO structure(name, biome)values ('Tree','Forest');
 
 /*insert enchantment*/
 /*max level cant be int '1' as 'I' */
