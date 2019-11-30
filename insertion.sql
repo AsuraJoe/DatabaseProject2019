@@ -1,5 +1,8 @@
 set FOREIGN_KEY_CHECKS =0;
-
+/*users*/
+insert into user( username, pass, email, moderator) Values ('TN', 'qwer7898', 'skyrider245@gmail.com', true );
+insert into user( username, pass, email, moderator) Values ('meloneater', 'YuanyesPassword', 'yuanyegeng@gmail.com', true );
+insert into user( username, pass, email, moderator) Values ('dxeman', 'DevonsPassword', 'dvon@gmail.com', true );
 /*entity*/
 insert INTO entity() Values();
 
@@ -7,7 +10,6 @@ insert INTO entity() Values();
 insert INTO entity_instance( entity_id,x,y,z)Values(1,1.1,1.2,1.3);
 
 /*insert item*/
-<<<<<<< HEAD
 /*Placable means it can be placed*/ 
 insert INTO item (item_id, item_name, max_stack,placeable) Values(267,'Iron Sword',1,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(258,'Iron Axe',1,false);
@@ -36,7 +38,7 @@ insert INTO item (item_id, item_name, max_stack,placeable) Values(374,'Glass Bot
 insert INTO item (item_id, item_name, max_stack,placeable) Values(289,'Gunpowder',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(363,'Raw Beef',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(261,'Bow',1,false);
-=======
+
 /*i am not sure what is placeable function in here so u need to fix placeable part, is that mean renewable?*/
 insert INTO item (item_name, max_stack,placeable) Values('Sword',0,true);
 insert INTO item (item_name, max_stack,placeable) Values('Axe',0,true);
@@ -72,13 +74,12 @@ insert INTO item (item_name, max_stack,placeable) Values('Gunpowder',64,true);
 insert INTO item (item_name, max_stack,placeable) Values('Book',64,true);
 insert INTO item (item_name, max_stack,placeable) Values('Raw Beef',64,true);
 insert INTO item (item_name, max_stack,placeable) Values('Bow',0,true);
->>>>>>> master
 
+set FOREIGN_KEY_CHECKS =0;
 /*item_instance*/
 insert INTO item_instance(stack, item_id) values (1,1);
 
 /*insert block*/
-<<<<<<< HEAD
 /*gravity should be false for almost everything*/
 insert INTO block(block_name, transparent, gravity) Values('Bricks', false, false);
 insert INTO block(block_name, transparent, gravity) Values('Wood', false, false);
@@ -124,54 +125,7 @@ insert INTO block(block_name, transparent, gravity) Values('Grass Block', false,
 insert INTO block(block_name, transparent, gravity) Values('Gravel', false, true);
 insert INTO block(block_name, transparent, gravity) Values('Prismarine', false, false);
 insert INTO block(block_name, transparent, gravity) Values('Lapis Lazuli Ore', false, false);
-=======
-/*idont know what gravity mean in here so i put all true*/
-insert INTO block(block_name, transparent, gravity) Values('Bricks', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Wood', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Cobblestone', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Button', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Door', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Fence', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Fence Gate', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Leaves', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Log', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Planks', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Pressure Plate', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Sapling', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Sign', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Activator Rail', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Flower', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Andesite', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Slab', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Stairs', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Wall', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Anvil', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Beacon', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Bamboo', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Carpet', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Bed', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Concrete Powder', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Glass', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Wool', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Block of Coal', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Block of Diamond', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Block of Emerald', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Block of Gold', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Block of Iron', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Bookshelf', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Cactus', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Chest', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Coarse Dirt', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Anvil', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Coal Ore', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Sandstone', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Dirt', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Furnace', true, true);
-insert INTO block(block_name, transparent, gravity) Values('Grass Block', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Gravel', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Prismarine', false, true);
-insert INTO block(block_name, transparent, gravity) Values('Lapis Lazuli Ore', false, true);
->>>>>>> master
+
 
 /*insert block_instance*/
 insert INTO block_instance(breaking_stage,x,y,z) Values(1,2,3,4);
@@ -270,26 +224,26 @@ insert INTO structure(name, biome)values ('Fortress','The Nether');
 
 /*insert enchantment*/
 /*max level cant be int '1' as 'I' */
-insert INTO enchantment(enchantment_id,max_level)values('Aqua Affinity', '1');
-insert INTO enchantment(enchantment_id,max_level)values('Bane of Arthropods', '4');
-insert INTO enchantment(enchantment_id,max_level)values('Blast Protection', '5');
-insert INTO enchantment(enchantment_id,max_level)values('Channeling', '1');
-insert INTO enchantment(enchantment_id,max_level)values('Curse of Binding', '1');
-insert INTO enchantment(enchantment_id,max_level)values('Curse of Vanishing', '1');
-insert INTO enchantment(enchantment_id,max_level)values('Depth Strider', '3');
-insert INTO enchantment(enchantment_id,max_level)values('Efficiency', '4');
-insert INTO enchantment(enchantment_id,max_level)values('Feather Falling', '5');
-insert INTO enchantment(enchantment_id,max_level)values('Fire Aspect', '2');
-insert INTO enchantment(enchantment_id,max_level)values('Fire Protection', '5');
-insert INTO enchantment(enchantment_id,max_level)values('Flame', '1');
-insert INTO enchantment(enchantment_id,max_level)values('Fortune', '3');
-insert INTO enchantment(enchantment_id,max_level)values('Frost Walker', '2');
-insert INTO enchantment(enchantment_id,max_level)values('Impaling', '4');
-insert INTO enchantment(enchantment_id,max_level)values('Infinity', '1');
-insert INTO enchantment(enchantment_id,max_level)values('Knockback', '2');
-insert INTO enchantment(enchantment_id,max_level)values('Looting', '3');
-insert INTO enchantment(enchantment_id,max_level)values('Loyalty', '3');
-insert INTO enchantment(enchantment_id,max_level)values('Mending', '1');
+insert INTO enchantment(enchantment_name,max_level)values('Aqua Affinity', '1');
+insert INTO enchantment(enchantment_name,max_level)values('Bane of Arthropods', '4');
+insert INTO enchantment(enchantment_name,max_level)values('Blast Protection', '5');
+insert INTO enchantment(enchantment_name,max_level)values('Channeling', '1');
+insert INTO enchantment(enchantment_name,max_level)values('Curse of Binding', '1');
+insert INTO enchantment(enchantment_name,max_level)values('Curse of Vanishing', '1');
+insert INTO enchantment(enchantment_name,max_level)values('Depth Strider', '3');
+insert INTO enchantment(enchantment_name,max_level)values('Efficiency', '4');
+insert INTO enchantment(enchantment_name,max_level)values('Feather Falling', '5');
+insert INTO enchantment(enchantment_name,max_level)values('Fire Aspect', '2');
+insert INTO enchantment(enchantment_name,max_level)values('Fire Protection', '5');
+insert INTO enchantment(enchantment_name,max_level)values('Flame', '1');
+insert INTO enchantment(enchantment_name,max_level)values('Fortune', '3');
+insert INTO enchantment(enchantment_name,max_level)values('Frost Walker', '2');
+insert INTO enchantment(enchantment_name,max_level)values('Impaling', '4');
+insert INTO enchantment(enchantment_name,max_level)values('Infinity', '1');
+insert INTO enchantment(enchantment_name,max_level)values('Knockback', '2');
+insert INTO enchantment(enchantment_name,max_level)values('Looting', '3');
+insert INTO enchantment(enchantment_name,max_level)values('Loyalty', '3');
+insert INTO enchantment(enchantment_name,max_level)values('Mending', '1');
 
 /*inventory*/
 insert INTO inventory(slot, item_instance_number) values (1, 1);
@@ -338,8 +292,6 @@ insert into entity_drops(item_id)values(1);
 insert into structure_made_of(name, block_id, x,y,z)values('dont know this one', 1, 1,2,3);
 
 set FOREIGN_KEY_CHECKS =1;
-<<<<<<< HEAD
-=======
 
-Select * from item;
->>>>>>> master
+
+Select * from user;

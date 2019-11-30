@@ -1,3 +1,12 @@
+create table user (
+    user_id int AUTO_INCREMENT,
+    username VARCHAR(30) not null,
+    pass VARCHAR(30) not null,
+    email varchar(55) not null,
+    moderator boolean  not null,
+    primary key (user_id),
+    Constraint Usr_straint unique (username, pass)
+);
 
 CREATE TABLE entity (
     entity_id int not null AUTO_INCREMENT,
@@ -29,6 +38,7 @@ create table item_instance(
 create table block(
     block_id int not null AUTO_INCREMENT,
     primary key (block_id),
+    block_name varchar(30),
     transparent boolean,
     gravity boolean
 );
@@ -67,6 +77,7 @@ create table structure(
 create table enchantment(
     enchantment_id int unique not null AUTO_INCREMENT,
     primary key (enchantment_id),
+    enchantment_name varchar(40),
     max_level int
 );
 create table inventory(
@@ -87,6 +98,7 @@ create table player(
 create table mob(
     instance_number int  not null AUTO_INCREMENT,
     foreign key (instance_number) references entity_instance(instance_number),
+    mob_name varchar(45),
     mob_type varchar(45),
     health int,
     air int, 
