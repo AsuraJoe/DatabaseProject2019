@@ -53,7 +53,8 @@ insert INTO item (item_id, item_name, max_stack,placeable) Values(363,'Raw Beef'
 insert INTO item (item_id, item_name, max_stack,placeable) Values(261,'Bow',1,false);
 
 /*item_instance*/
-insert INTO item_instance(stack, item_id) values (1,1);
+insert INTO item_instance(instance_id, stack, item_id) values (1, 5, 260);
+insert INTO item_instance(instance_id, stack, item_id) values (2, 1, 292);
 
 /*insert block*/
 /*gravity should be false for almost everything*/
