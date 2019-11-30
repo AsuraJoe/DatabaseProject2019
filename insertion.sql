@@ -3,7 +3,20 @@ set FOREIGN_KEY_CHECKS =0;
 /*entity*/
 insert INTO entity(entity_id, entity_name) Values(1,'Dropped Item');
 insert INTO entity(entity_id, entity_name) Values(2, 'Experience Orb');
+insert INTO entity(entity_id, entity_name) Values(10, 'Arrow');
 insert INTO entity(entity_id, entity_name) Values(30, 'Armor Stand');
+insert INTO entity(entity_id, entity_name) Values(41, 'Boat');
+insert INTO entity(entity_id, entity_name) Values(42, 'Minecart');
+insert INTO entity(entity_id, entity_name) Values(50, 'Creeper');
+insert INTO entity(entity_id, entity_name) Values(51, 'Skeleton');
+insert INTO entity(entity_id, entity_name) Values(52, 'Spider');
+insert INTO entity(entity_id, entity_name) Values(54, 'Zombie');
+insert INTO entity(entity_id, entity_name) Values(55, 'Slime');
+insert INTO entity(entity_id, entity_name) Values(58, 'Enderman');
+insert INTO entity(entity_id, entity_name) Values(90, 'Pig');
+insert INTO entity(entity_id, entity_name) Values(91, 'Sheep');
+insert INTO entity(entity_id, entity_name) Values(92, 'Cow');
+insert INTO entity(entity_id, entity_name) Values(93, 'Chicken');
 
 /*entity_instance*/
 insert INTO entity_instance( entity_id,x,y,z)Values(1,1.1,1.2,1.3);
