@@ -1,3 +1,4 @@
+
 CREATE TABLE entity (
     entity_id int not null AUTO_INCREMENT,
     primary key (entity_id)
