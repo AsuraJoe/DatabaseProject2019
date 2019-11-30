@@ -1,6 +1,7 @@
 CREATE TABLE entity (
     entity_id int not null AUTO_INCREMENT,
-    primary key (entity_id)
+    primary key (entity_id),
+    entity_name varchar(45)
 );
 create table entity_instance (
     instance_number int not null AUTO_INCREMENT,
