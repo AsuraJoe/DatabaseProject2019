@@ -3,7 +3,7 @@ create table user (
     username VARCHAR(30) not null,
     pass VARCHAR(30) not null,
     email varchar(55) not null,
-    moderator boolean  not null,
+    moderator boolean  not null default 0,
     primary key (user_id),
     Constraint Usr_straint unique (username, pass)
 );

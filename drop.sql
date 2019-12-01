@@ -1,4 +1,5 @@
 SET FOREIGN_KEY_CHECKS=0; 
+drop table if exists user;
 drop table if exists entity ;
 drop table if exists entity_instance ;
 drop table if exists item;
