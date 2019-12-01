@@ -33,7 +33,7 @@ create table item_instance(
     primary key (instance_number),
     stack int,
     item_id int,
-    foreign key (item_id) references item (item_id)
+    foreign key (item_id) references item (item_id) on delete cascade
 );
 create table block(
     block_id int not null AUTO_INCREMENT,
@@ -80,6 +80,14 @@ create table enchantment(
     enchantment_name varchar(40),
     max_level int
 );
+
+create table enchant (
+enchantment_id int,
+item_instance_number int,
+foreign key (enchantment_id) references enchantment(enchanment_id),
+foreign key (item_instance_number) references enchantment(enchantment_id),
+lv int not null
+);
 create table inventory(
     entity_instance_number int AUTO_INCREMENT,
     foreign key (entity_instance_number) references entity_instance (instance_number),
@@ -89,6 +97,7 @@ create table inventory(
 );
 create table player(
     instance_number int unique not null AUTO_INCREMENT,
+    primary key (instance_number),
     foreign key (instance_number) references entity_instance(instance_number),
     username varchar(45) unique not null,
     health int,
@@ -97,6 +106,7 @@ create table player(
 );
 create table mob(
     instance_number int  not null AUTO_INCREMENT,
+    primary key (instance_number),
     foreign key (instance_number) references entity_instance(instance_number),
     mob_name varchar(45),
     mob_type varchar(45),
@@ -106,11 +116,13 @@ create table mob(
 );
 create table armor_stand(
     instance_number int not null AUTO_INCREMENT,
+    primary key (instance_number),
     foreign key (instance_number) references entity_instance(instance_number),
     constraint UC_stand unique(instance_number)
 );
 create table minecart(
     instance_number int not null AUTO_INCREMENT,
+    primary key (instance_number),
     foreign key (instance_number) references entity_instance(instance_number),
     damage int,
      constraint UC_cart unique(instance_number)
