@@ -279,7 +279,6 @@ insert into armor_stand()values();
 insert INTO minecart (damage) Values(6);
 
 /*insert block_drops*/
-insert into block_drops(block_id, item_id)value(1);
 insert INTO block_drops(block_id,  item_id) Values(45,45);
 insert INTO block_drops(block_id,  item_id) Values(17,17);
 insert INTO block_drops(block_id,  item_id) Values(4,4);
@@ -324,7 +323,8 @@ insert INTO block_drops(block_id,  item_id) Values(78,332);
 
 
 
-insert into creates_block(block_id)values(1);
+insert into creates_block(item_id, block_id)values(1);
+
 
 insert into creates_entity(entity_id)values(1);
 
