@@ -323,7 +323,49 @@ insert INTO block_drops(block_id,  item_id) Values(78,332);
 
 
 
-insert into creates_block(item_id, block_id)values(1);
+insert into creates_block(item_id, block_id)values(45,45);
+insert into creates_block(item_id, block_id)values(17,17);
+insert into creates_block(item_id, block_id)values(4,4);
+insert into creates_block(item_id, block_id)values(1,1);
+insert into creates_block(item_id, block_id)values(77,77);
+insert into creates_block(item_id, block_id)values(64,64);
+insert into creates_block(item_id, block_id)values(85,85);
+insert into creates_block(item_id, block_id)values(107,107);
+insert into creates_block(item_id, block_id)values(18,18);
+insert into creates_block(item_id, block_id)values(5,5);
+insert into creates_block(item_id, block_id)values(70,70);
+insert into creates_block(item_id, block_id)values(6,6);
+insert into creates_block(item_id, block_id)values(63,63);
+insert into creates_block(item_id, block_id)values(157,157);
+insert into creates_block(item_id, block_id)values(37,37);
+insert into creates_block(item_id, block_id)values(53,53);
+insert into creates_block(item_id, block_id)values(145,145);
+insert into creates_block(item_id, block_id)values(138,138);
+insert into creates_block(item_id, block_id)values(171,171);
+insert into creates_block(item_id, block_id)values(26,26);
+insert into creates_block(item_id, block_id)values(252,252);
+insert into creates_block(item_id, block_id)values(20,20);
+insert into creates_block(item_id, block_id)values(35,35);
+insert into creates_block(item_id, block_id)values(173,173);
+insert into creates_block(item_id, block_id)values(57,57);
+insert into creates_block(item_id, block_id)values(133,133);
+insert into creates_block(item_id, block_id)values(41,41);
+insert into creates_block(item_id, block_id)values(42,42);
+insert into creates_block(item_id, block_id)values(47,47);
+insert into creates_block(item_id, block_id)values(81,81);
+insert into creates_block(item_id, block_id)values(54,54);
+insert into creates_block(item_id, block_id)values(3,3);
+insert into creates_block(item_id, block_id)values(2,2);
+insert into creates_block(item_id, block_id)values(24,24);
+insert into creates_block(item_id, block_id)values(61,61);
+insert into creates_block(item_id, block_id)values(13,13);
+insert into creates_block(item_id, block_id)values(168,168);
+insert into creates_block(item_id, block_id)values(56,56);
+insert into creates_block(item_id, block_id)values(9,9);
+insert into creates_block(item_id, block_id)values(79,79);
+insert into creates_block(item_id, block_id)values(12,12);
+insert into creates_block(item_id, block_id)values(78,78);
+
 
 
 insert into creates_entity(entity_id)values(1);
