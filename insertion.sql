@@ -248,7 +248,6 @@ insert INTO structure(name, biome)values ('Village','Plains, Desert, Taipa');
 insert INTO structure(name, biome)values ('Swamp hut','Swamp');
 insert INTO structure(name, biome)values ('Woodland mansion','Deep Forest');
 insert INTO structure(name, biome)values ('Dungeon','Any');
-insert INTO structure(name, biome)values ('Fortress','The Nether');
 
 /*insert enchantment*/
 /*max level cant be int '1' as 'I' */
@@ -415,6 +414,6 @@ insert into entity_drops(entity_id,item_id)values(92,334);
 insert into entity_drops(entity_id,item_id)values(92,363);
 
 
-insert into structure_made_of(name, block_id, x,y,z)values('dont know this one', 1, 1,2,3);
+insert into structure_made_of(name, block_id)values('Shipwreck', 'Oak Wood Planks');
 
 set FOREIGN_KEY_CHECKS =1;
