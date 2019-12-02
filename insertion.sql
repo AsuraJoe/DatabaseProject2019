@@ -47,6 +47,7 @@ insert INTO item (item_id, item_name, max_stack,placeable) Values(307,'Iron Ches
 insert INTO item (item_id, item_name, max_stack,placeable) Values(345,'Compass',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(280,'Stick',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(361,'Pumpkin Seeds',64,true);
+insert INTO item (item_id, item_name, max_stack,placeable) Values(368,'Ender Pearl',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(381,'Eye of Ender',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(392,'Potato',64,true);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(420,'Lead',64,false);
@@ -62,6 +63,7 @@ insert INTO item (item_id, item_name, max_stack,placeable) Values(289,'Gunpowder
 insert INTO item (item_id, item_name, max_stack,placeable) Values(363,'Raw Beef',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(261,'Bow',1,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(332,'Snowball',16,false);
+insert INTO item (item_id, item_name, max_stack,placeable) Values(344,'Egg',16,false);
 
 insert INTO item (item_id, item_name, max_stack,placeable) Values(45,'Bricks', 64, true);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(17,'Oak Wood', 64, true);
@@ -398,8 +400,20 @@ insert into creates_block(item_id, block_id)values(78,78);
 insert into creates_entity(item_id,entity_id)values(381,15);
 insert into creates_entity(item_id,entity_id)values(368,14);
 insert into creates_entity(item_id,entity_id)values(332,11);
+insert into creates_entity(item_id,entity_id)values(344,7);
 
+insert into entity_drops(entity_id,item_id)values(5,352);
+insert into entity_drops(entity_id,item_id)values(10,262);
 insert into entity_drops(entity_id,item_id)values(15,381);
+insert into entity_drops(entity_id,item_id)values(42,328);
+insert into entity_drops(entity_id,item_id)values(50,289);
+insert into entity_drops(entity_id,item_id)values(51,352);
+insert into entity_drops(entity_id,item_id)values(51,262);
+insert into entity_drops(entity_id,item_id)values(58,368);
+insert into entity_drops(entity_id,item_id)values(91,35);
+insert into entity_drops(entity_id,item_id)values(92,334);
+insert into entity_drops(entity_id,item_id)values(92,363);
+
 
 insert into structure_made_of(name, block_id, x,y,z)values('dont know this one', 1, 1,2,3);
 
