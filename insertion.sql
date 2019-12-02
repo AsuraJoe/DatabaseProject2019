@@ -61,6 +61,7 @@ insert INTO item (item_id, item_name, max_stack,placeable) Values(374,'Glass Bot
 insert INTO item (item_id, item_name, max_stack,placeable) Values(289,'Gunpowder',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(363,'Raw Beef',64,false);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(261,'Bow',1,false);
+insert INTO item (item_id, item_name, max_stack,placeable) Values(332,'Snowball',16,false);
 
 insert INTO item (item_id, item_name, max_stack,placeable) Values(45,'Bricks', 64, true);
 insert INTO item (item_id, item_name, max_stack,placeable) Values(17,'Oak Wood', 64, true);
@@ -394,9 +395,11 @@ insert into creates_block(item_id, block_id)values(78,78);
 
 
 
-insert into creates_entity(entity_id)values(1);
+insert into creates_entity(item_id,entity_id)values(381,15);
+insert into creates_entity(item_id,entity_id)values(368,14);
+insert into creates_entity(item_id,entity_id)values(332,11);
 
-insert into entity_drops(item_id)values(1);
+insert into entity_drops(entity_id,item_id)values(15,381);
 
 insert into structure_made_of(name, block_id, x,y,z)values('dont know this one', 1, 1,2,3);
 
