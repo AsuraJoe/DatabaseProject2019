@@ -10,6 +10,7 @@ create table user (
 
 CREATE TABLE entity (
     entity_id int not null AUTO_INCREMENT,
+    entity_name varchar(30) not null,
     primary key (entity_id)
 );
 create table entity_instance (
@@ -84,9 +85,10 @@ create table enchantment(
 create table enchant (
 enchantment_id int,
 item_instance_number int,
-foreign key (enchantment_id) references enchantment(enchanment_id),
-foreign key (item_instance_number) references enchantment(enchantment_id),
-lv int not null
+foreign key (enchantment_id) references enchantment(enchantment_id),
+foreign key (item_instance_number) references item_instance(instance_number),
+lv int not null,
+constraint UC_enchant unique (enchantment_id, item_instance_number)
 );
 create table inventory(
     entity_instance_number int AUTO_INCREMENT,
