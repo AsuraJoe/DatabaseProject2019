@@ -35,6 +35,8 @@ create table block(
 create table block_instance (
     instance_number int not null AUTO_INCREMENT,
     primary key (instance_number),
+    block_id int,
+    foreign key (block_id) references block (block_id),
     breaking_stage int,
     x int,
     y int,
@@ -45,9 +47,6 @@ create table chunk (
     lower_y int,
     lower_z int,
     primary key(lower_x,lower_y,lower_z),
-    upper_x int,
-    upper_y int,
-    upper_z int
 );
 create table biome (
     name varchar(45) not null,
