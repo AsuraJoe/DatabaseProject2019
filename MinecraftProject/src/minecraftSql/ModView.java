@@ -2,12 +2,19 @@ package minecraftSql;
 
 import java.util.Scanner;
 
-public class ModView implements View {
+public class ModView extends View {
 
 	public ModView() {
 		// TODO Auto-generated constructor stub
+		this.mod = 1;
 	}
 	
+	public ModView(SQLConnector con) {
+		// TODO Auto-generated constructor stub
+		this.mod = 1;
+		this.connection = con;
+	}
+
 	@Override
 	public View display() {
 		// TODO Auto-generated method stub
@@ -36,8 +43,8 @@ public class ModView implements View {
 	
 	public View getView(int n ) {
 		switch(n) {
-		case 1: return new UserGrantView();
-		case 2: return new UserView(1);
+		case 1: return new UserGrantView(connection);
+		case 2: return new UserView(1,connection);
 		case 3: break;
 		default: break;
 		}

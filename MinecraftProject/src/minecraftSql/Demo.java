@@ -1,3 +1,4 @@
+
 package minecraftSql;
 
 import java.sql.Connection;
@@ -9,14 +10,14 @@ public class Demo {
 
 	public static void main (String[] args)  {
 		View view = null;
-		SQLConnector connection = new SQLConnector();
+		SQLConnector connection = new SQLConnector("localhost:3306","minecraft","root","GYY85510199!");
 		User currUser = new User();
 		String userStr = null;
 		McQuerry querry = new CreateUser();
 		querry.prompt();
 		if(!querry.checkIfNull()) {
-			System.out.println("Account created successfully");
 			execute(connection, querry.createQuerry());
+			System.out.println("Account created successfully");
 		}
 		querry = new UserLogin();
 		querry.prompt();
@@ -29,14 +30,14 @@ public class Demo {
 		
 		if(currUser.isMod()) {
 			System.out.println("Hello MOD "+currUser.getName()+"!!!!");
-			view = new ModView();
+			view = new ModView(connection);
 			while (view!=null) {
 				view=view.display();
 			}
 		}
 		else if(currUser.isUser()){
 			System.out.println("Hello user "+currUser.getName()+"!!");
-			view = new UserView();
+			view = new UserView(connection);
 			while (view!=null) {
 				view=view.display();
 			}

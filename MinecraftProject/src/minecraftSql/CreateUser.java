@@ -8,7 +8,8 @@ public class CreateUser implements McQuerry {
 	private String email;
 	public CreateUser() {
 		// TODO Auto-generated constructor stub
-	}
+	}	
+	
 	public String getUsername() {
 		return username;
 	}

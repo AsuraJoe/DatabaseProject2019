@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
 
-public class ItemInstancesView implements View {
+public class ItemInstancesView extends View {
 	private int itemId;
 
 	public ItemInstancesView() {
@@ -27,19 +27,6 @@ public class ItemInstancesView implements View {
 	public void render() {
 		// TODO Auto-generated method stub
 
-	}
-	
-
-	@Override
-	public void exec() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public View reset() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

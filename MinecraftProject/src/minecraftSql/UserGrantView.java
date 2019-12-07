@@ -8,13 +8,18 @@ import java.util.Scanner;
 import java.sql.SQLException;
 
 
-public class UserGrantView implements View {
-	SQLConnector connection = new SQLConnector();
-	String [] attrs= {"user_id","username","email","moderator"};
-	String querry = ("select * from user ");
-
+public class UserGrantView extends View {
+	
 	public UserGrantView() {
 		// TODO Auto-generated constructor stub
+		this.attrs=new String[]{"user_id","username","email","moderator"};
+		this.querry = ("select * from user ");
+	}
+	
+	public UserGrantView(SQLConnector con) {
+		this.attrs=new String[]{"user_id","username","email","moderator"};
+		this.querry = ("select * from user ");
+		this.connection = con;
 	}
 
 	@Override
@@ -45,32 +50,6 @@ public class UserGrantView implements View {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void exec() {
-		// TODO Auto-generated method stub
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		try{  
-			con=DriverManager.getConnection(  
-			connection.connect(),connection.fetchUser(),connection.fetchPassword());  
-			stmt=con.createStatement();  
-			stmt.executeQuery(querry);  
-			rs= stmt.getResultSet();
-			while(rs.next()) {
-				for (int i =0; i<attrs.length; i++) {
-					System.out.printf("%25s ",rs.getString(attrs[i]));
-				}
-				System.out.println();
-			}
-			System.out.println();
-			}catch(Exception e){ e.printStackTrace();}  
-		    finally {
-				try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-				try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
-		    }
-	}
 	
 	public void execute(int index) {
 		Connection con = null;
@@ -88,7 +67,7 @@ public class UserGrantView implements View {
 	}
 	@Override
 	public View reset() {
-		return new ModView();
+		return new ModView(connection);
 		
 	}
 	

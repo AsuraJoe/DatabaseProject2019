@@ -2,19 +2,30 @@ package minecraftSql;
 
 import java.util.Scanner;
 
-public class UserView implements View{
+public class UserView extends View{
 	
-	private int mod =0;
 
 	public UserView() {
 		// TODO Auto-generated constructor stub
+		this.mod=0;
 	}
+	
+	public UserView(SQLConnector con) {
+		this.mod=0;
+		this.connection = con;
+	}
+	
 	public UserView(int m) {
 		// TODO Auto-generated constructor stub
 		this.mod = m;
 	}
-
-
+	
+	public UserView(int m, SQLConnector con) {
+		// TODO Auto-generated constructor stub
+		this.mod = m;
+		this.connection =  con;
+	}
+	
 	@Override
 	public View display() {
 		// TODO Auto-generated method stub
@@ -48,9 +59,9 @@ public class UserView implements View{
 	
 	public View getView(int n){
 		switch(n) {
-		case 1: return new ItemView(mod);
-		case 2: return new PlayerView(mod);
-		case 3: return new BlockView(mod);
+		case 1: return new ItemView(mod,connection);
+		case 2: return new PlayerView(mod,connection);
+		case 3: return new BlockView(mod,connection);
 		default: break;
 		}
 		

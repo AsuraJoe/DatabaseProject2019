@@ -6,19 +6,35 @@ import java.sql.Statement;
 import java.util.Scanner;
 import java.sql.SQLException;
 
-public class ItemView implements View {
-	SQLConnector connection = new SQLConnector();
-	String [] attrs= {"item_id","item_name","max_stack",};
-	String querry = ("select * from item ");
-	private int mod =0;
+public class ItemView extends View {
+	
 	public ItemView() {
 		// TODO Auto-generated constructor stub
+		this.attrs=new String[]{"item_id","item_name","max_stack",};
+		this.querry = ("select * from item ");
+	}
+	
+	public ItemView(SQLConnector con) {
+		this.attrs=new String[]{"item_id","item_name","max_stack",};
+		this.querry = ("select * from item ");
+		this.connection = con;
 	}
 	
 	public ItemView(int m) {
 		// TODO Auto-generated constructor stub
+		this.attrs=new String[]{"item_id","item_name","max_stack",};
+		this.querry = ("select * from item ");
 		this.mod=m;
 	}
+	
+	public ItemView(int m,SQLConnector con) {
+		// TODO Auto-generated constructor stub
+		this.attrs=new String[]{"item_id","item_name","max_stack",};
+		this.querry = ("select * from item ");
+		this.mod=m;
+		this.connection=con;
+	}
+
 
 	@Override
 	public View display() {
@@ -41,40 +57,5 @@ public class ItemView implements View {
 		
 	}
 
-	@Override
-	public void exec() {
-		// TODO Auto-generated method stub
-		Connection con = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		try{  
-			con=DriverManager.getConnection(  
-			connection.connect(),connection.fetchUser(),connection.fetchPassword());  
-			stmt=con.createStatement();  
-			stmt.executeQuery(querry);  
-			rs= stmt.getResultSet();
-			while(rs.next()) {
-				for (int i =0; i<attrs.length; i++) {
-					System.out.printf("%15s ",rs.getString(attrs[i]));
-				}
-				System.out.println();
-			}
-			System.out.println();
-			}catch(Exception e){ e.printStackTrace();}  
-		    finally {
-				try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-				try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
-			}
-	}
-
-	@Override
-	public View reset() {
-		// TODO Auto-generated method stub
-		if (mod==1)
-			return new ModView();
-		else if (mod==0)
-			return new UserView();
-		return null;
-	}
-
+	
 }
