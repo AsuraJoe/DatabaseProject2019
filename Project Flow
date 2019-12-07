@@ -39,6 +39,7 @@ Outputs all item instances	select * from item_instance;
 //select name, level from enchant inner join enchantment on enchantment.enchantment_id = enchant.enchantment_id where instance_number = i;
 
 
+//(Entity Screen)
 //(Biome Screen)
 //(Enchantment Screen)
-//(Chunk Screen)
+//(Chunk Screen) (Allows user to enter the coordinates of a chunk x,y,z and find anything between that and x+15,y+15,z+15 inclusive. The coordinates must be divisible by 16)
