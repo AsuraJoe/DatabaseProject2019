@@ -1,0 +1,45 @@
+//Title Screen
+0: Return
+1: View Blocks
+2: View Items
+3: View Entities
+4: View Biomes
+5: View Enchantments
+6: Search by Chunk
+
+//(1 is chosen from title screen)
+//(Block Screen)
+0: Return
+1: View Block Types
+Outputs all block instances	select * from block_instance;
+2: View Block
+3: Add Block
+4: Delete Block
+
+//(2 is chosen from Block Screen)
+Enter Instance_id
+//set i = instance_id (in java code)
+//select name from block inner join block_instance on block_instance.block_id = block.block_id and block_instance.instance_number = i ; (concatenate the i in Java code)
+//select * from block_instance where block_instance = i;
+0: Return //Goes back to Block Screen
+
+//(2 is chosen from Item Screen)
+//(Item Screen)
+0: Return
+1: View Item Types
+Outputs all item instances	select * from item_instance;
+2: View Item
+3: Add Item
+4: Delete Item
+
+
+//(2 is chosen from Item Screen)
+// select name from item inner join item_instance on item_instance.item_id = item.item_id and item_instance.instance_number = i ; 
+//select * from item_instance where item_instance = i;
+//select name, level from enchant inner join enchantment on enchantment.enchantment_id = enchant.enchantment_id where instance_number = i;
+
+
+//(Entity Screen)
+//(Biome Screen)
+//(Enchantment Screen)
+//(Chunk Screen) (Allows user to enter the coordinates of a chunk x,y,z and find anything between that and x+15,y+15,z+15 inclusive. The coordinates must be divisible by 16)
