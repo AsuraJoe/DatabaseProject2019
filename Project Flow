@@ -40,6 +40,13 @@ Outputs all item instances	select * from item_instance;
 
 
 //(Entity Screen)
+0: Return
+1: View Entity Types
+Outputs all entity instances	select * from block_instance;
+2: View Entity
+3: Add Entity
+4: Delete Entity
+
 //(Biome Screen)
 //(Enchantment Screen)
 //(Chunk Screen) (Allows user to enter the coordinates of a chunk x,y,z and find anything between that and x+15,y+15,z+15 inclusive. The coordinates must be divisible by 16)
