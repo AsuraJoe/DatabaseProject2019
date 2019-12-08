@@ -7,7 +7,6 @@ import java.util.Scanner;
 import java.sql.SQLException;
 
 public class BlockView extends View {
-	private int mod =0;
 	
 	public BlockView() {
 		// TODO Auto-generated constructor stub

@@ -11,6 +11,7 @@ public abstract class View {
 	protected SQLConnector connection = new SQLConnector();
 	protected String querry;
 	protected String [] attrs;
+	protected String [] optQuerries;
 	protected int mod;
 	
 	

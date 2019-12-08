@@ -10,7 +10,7 @@ public class Demo {
 
 	public static void main (String[] args)  {
 		View view = null;
-		SQLConnector connection = new SQLConnector("localhost:3306","minecraft","root","GYY85510199!");
+		SQLConnector connection = new SQLConnector();
 		User currUser = new User();
 		String userStr = null;
 		McQuerry querry = new CreateUser();
