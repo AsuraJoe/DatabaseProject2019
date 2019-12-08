@@ -48,5 +48,10 @@ Outputs all entity instances	select * from block_instance;
 4: Delete Entity
 
 //(Biome Screen)
+0:Return
+//select * from biome; lists all biomes
+1:Biome Chunks
+2:Biome Blocks
+
 //(Enchantment Screen)
 //(Chunk Screen) (Allows user to enter the coordinates of a chunk x,y,z and find anything between that and x+15,y+15,z+15 inclusive. The coordinates must be divisible by 16)
