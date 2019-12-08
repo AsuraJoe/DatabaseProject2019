@@ -31,6 +31,7 @@ Outputs all item instances	select * from item_instance;
 2: View Item
 3: Add Item
 4: Delete Item
+5: Enchant Item
 
 
 //(2 is chosen from Item Screen)
