@@ -34,6 +34,21 @@ insert INTO entity(entity_id,entity_name) Values(93,'Chicken');
 insert INTO entity(entity_id,entity_name) Values(95,'Wolf');
 insert INTO entity(entity_id,entity_name) Values(120,'Villager');
 
+insert into mob_properties(entity_id,default_health,hostility) values(50,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(51,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(52,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(54,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(55,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(58,30,'hostile - passive');
+insert into mob_properties(entity_id,default_health,hostility) values(59,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(61,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(68,20,'hostile');
+insert into mob_properties(entity_id,default_health,hostility) values(90,10,'passive');
+insert into mob_properties(entity_id,default_health,hostility) values(91,10,'passive');
+insert into mob_properties(entity_id,default_health,hostility) values(92,10,'passive');
+insert into mob_properties(entity_id,default_health,hostility) values(95,5,'hosile - passive');
+insert into mob_properties(entity_id,default_health,hostility) values(120,15,'passive');
+
 
 /*entity_instance*/
 insert INTO entity_instance( entity_id,x,y,z)Values(1,1.1,1.2,1.3);
