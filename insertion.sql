@@ -29,7 +29,6 @@ insert INTO entity(entity_id,entity_name) Values(91,'Sheep');
 insert INTO entity(entity_id,entity_name) Values(92,'Cow');
 insert INTO entity(entity_id,entity_name) Values(93,'Chicken');
 insert INTO entity(entity_id,entity_name) Values(95,'Wolf');
-insert INTO entity(entity_id,entity_name) Values(100,'Horse');
 insert INTO entity(entity_id,entity_name) Values(120,'Villager');
 
 
@@ -305,25 +304,25 @@ insert INTO player(username, health, hunger, air) Values ('Devon', 20,7,12);
 
 /*insert mob*/
 /*idk what air is in here so all 12*/
-insert INTO mob(mob_name, mob_type, health, air) Values('Cave spider', 'Monsters',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Chicken', 'Peaceful',4,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Cow', 'Peaceful',10,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Cat', 'Peaceful',10,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Horse', 'Monsters',15,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Pufferfish', 'Defensive',3,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Wolf', 'Animals',8,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Panda', 'Animals',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Enderman', 'Monsters',40,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Spider', 'Monsters',16,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Zombie Pigman', 'Monsters',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Creeper', 'Hostile',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Zombie', 'Hostile',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Zombie Villager', 'Hostile',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Slime', 'Hostile',4,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('NPC', 'Education Edition exclusive mobs',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Blaze', 'Hostile',20,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Guardian', 'Hostile',30,12);
-insert INTO mob(mob_name, mob_type, health, air) Values('Ghast', 'Hostile',10,12);
+insert INTO mob(instance_id , health, air) Values('Cave spider', 'Monsters',20,12);
+insert INTO mob(instance_id, health, air) Values('Chicken', 93,4,12);
+insert INTO mob(instance_id, health, air) Values('Cow', 92,10,12);
+insert INTO mob(instance_id, health, air) Values('Cat', 'Peaceful',10,12);
+insert INTO mob(instance_id, health, air) Values('Horse', 'Monsters',15,12);
+insert INTO mob(instance_id, health, air) Values('Pufferfish', 'Defensive',3,12);
+insert INTO mob(instance_id, health, air) Values('Wolf', 'Animals',8,12);
+insert INTO mob(instance_id, health, air) Values('Panda', 'Animals',20,12);
+insert INTO mob(instance_id, health, air) Values('Enderman', 'Monsters',40,12);
+insert INTO mob(instance_id, health, air) Values('Spider', 'Monsters',16,12);
+insert INTO mob(instance_id, health, air) Values('Zombie Pigman', 'Monsters',20,12);
+insert INTO mob(instance_id, health, air) Values('Creeper', 'Hostile',20,12);
+insert INTO mob(instance_id, health, air) Values('Zombie', 'Hostile',20,12);
+insert INTO mob(instance_id, health, air) Values('Zombie Villager', 'Hostile',20,12);
+insert INTO mob(instance_id, health, air) Values('Slime', 'Hostile',4,12);
+insert INTO mob(instance_id, health, air) Values('NPC', 'Education Edition exclusive mobs',20,12);
+insert INTO mob(instance_id, health, air) Values('Blaze', 'Hostile',20,12);
+insert INTO mob(instance_id, health, air) Values('Guardian', 'Hostile',30,12);
+insert INTO mob(instance_id, health, air) Values('Ghast', 'Hostile',10,12);
 
 /*armor_stand*/
 insert into armor_stand()values();
