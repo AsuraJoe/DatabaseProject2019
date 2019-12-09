@@ -41,9 +41,9 @@ END
 //DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE Add_item(item_id int, item_name VARCHAR(40), placeable boolean )
+CREATE PROCEDURE Add_item(item_id int, item_name VARCHAR(40), max_stack int, placeable boolean )
 BEGIN 
-INSERT INTO Item(item_id, item_name, placeable) values(item_id, item_name, placeable);
+INSERT INTO Item(item_id, item_name, max_stack, placeable) values(item_id, item_name, max_stack, placeable);
 END 
 //DELIMITER ;
                                                                
@@ -133,9 +133,9 @@ END
 
 
 DELIMITER //
-CREATE PROCEDURE Add_player(username varchar(20), health int, hunger int, air int)
+CREATE PROCEDURE Add_player(username varchar(20))
 BEGIN 
-INSERT INTO player(username, health, hunger, air) values(username, health, hunger, air);
+INSERT INTO player(username, health, hunger, air) values(username, 20, 20, 0);
 END 
 //DELIMITER ;
 

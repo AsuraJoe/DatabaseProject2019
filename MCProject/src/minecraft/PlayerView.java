@@ -65,5 +65,11 @@ public class PlayerView extends DataView {
 		this.querry = ("select * from player");
 	}
 
+	@Override
+	public DataView getView(String n) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

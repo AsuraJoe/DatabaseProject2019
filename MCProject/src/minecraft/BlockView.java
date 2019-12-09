@@ -63,4 +63,10 @@ public class BlockView extends DataView {
 		this.querry = ("select * from block ");
 	}
 
+	@Override
+	public DataView getView(String n) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

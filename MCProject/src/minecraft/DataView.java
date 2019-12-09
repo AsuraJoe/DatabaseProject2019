@@ -20,6 +20,7 @@ public abstract class DataView {
 	public abstract void render();
 	public abstract void menu();
 	public abstract void preLoad();
+	public abstract DataView getView(String n);
 	
 	public void execute ( String querry) {
 		Connection con = null;
@@ -56,6 +57,7 @@ public abstract class DataView {
 		    finally {
 				try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
 				try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
+				try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
 			}
 	};
 	

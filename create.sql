@@ -35,7 +35,8 @@ create table item_instance(
     primary key (instance_number),
     stack int,
     item_id int,
-    foreign key (item_id) references item (item_id) on delete cascade
+    foreign key (item_id) references item (item_id) on delete cascade,
+    enchant_count int default 0
 );
 create table block(
     block_id int not null AUTO_INCREMENT,
@@ -86,8 +87,8 @@ create table enchantment(
 create table enchant (
 enchantment_id int,
 item_instance_number int,
-foreign key (enchantment_id) references enchantment(enchantment_id),
-foreign key (item_instance_number) references item_instance(instance_number),
+foreign key (enchantment_id) references enchantment(enchantment_id) on delete cascade,
+foreign key (item_instance_number) references item_instance(instance_number) on delete cascade,
 lv int not null,
 constraint UC_enchant unique (enchantment_id, item_instance_number)
 );

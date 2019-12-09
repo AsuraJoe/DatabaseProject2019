@@ -74,4 +74,10 @@ public class UserGrantView extends DataView {
 		this.querry = ("select * from user ");
 	}
 
+	@Override
+	public DataView getView(String n) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
