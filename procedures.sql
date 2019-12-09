@@ -26,8 +26,8 @@ END
 DELIMITER //
 CREATE PROCEDURE get_instanceOf_Item (item_id int)
 BEGIN 
-Select instance_number, stack from item_instance i
-WHERE i.item_id = item_id;
+Select i.instance_number, i.stack, i.item_id, ii.item_name from item_instance i, item ii
+WHERE i.item_id = item_id AND i.item_id = ii.item_id;
 END
 //DELIMITER ;
 

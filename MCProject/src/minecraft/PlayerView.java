@@ -38,12 +38,9 @@ public class PlayerView extends DataView {
 			System.out.printf("%25s-", attrs[i]);
 		System.out.println();
 		exec();
+		menu();
 		Scanner mx = new Scanner(System.in);
-		System.out.println("Do you want to continue back to the menu(Type Y for yes)");
-		if(mx.nextLine().toLowerCase().equals("y")) 
-			return reset();
-		System.out.println("Program ended");
-		return null;
+		return getView(mx.nextLine());
 	}
 
 	@Override
@@ -55,6 +52,13 @@ public class PlayerView extends DataView {
 	@Override
 	public void menu() {
 		// TODO Auto-generated method stub
+		if(mod==1) {
+			System.out.println("1-Add Player");
+			System.out.println("2-Remove Player");
+			System.out.println("3-Return to menu");
+		}
+		else 
+			System.out.println("Do you want to return to the menu? (y for yes)");
 		
 	}
 
@@ -63,11 +67,40 @@ public class PlayerView extends DataView {
 		// TODO Auto-generated method stub
 		this.attrs = new String[]{"instance_number","username","health","hunger"};
 		this.querry = ("select * from player");
+		this.procs = new String[] {"Add_player","delete_player"};
 	}
 
 	@Override
 	public DataView getView(String n) {
 		// TODO Auto-generated method stub
+		if(mod==1) {
+			Scanner mx = new Scanner(System.in);
+			switch(n) {
+			case "1":{
+				System.out.println("Please enter your new player name:");
+				String proc="Call "+procs[0]+"("+"'"+mx.nextLine()+"'"+")";
+				System.out.println(proc);
+				execute(proc);
+				return new PlayerView(mod,connection);
+			}
+			case "2":{
+				String proc="Call "+procs[1]+"(";
+				System.out.println("Please enter the instance_number for deletion");
+				proc+=(mx.nextLine());
+				proc+=");";
+				execute(proc);
+				return new PlayerView(mod,connection);
+			}
+			case "3": return reset();
+			default: break;
+			}
+		}
+		else {
+			switch(n) {
+			case "y": return reset();
+			default: break;
+			}
+		}
 		return null;
 	}
 

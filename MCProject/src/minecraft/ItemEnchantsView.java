@@ -15,7 +15,6 @@ public class ItemEnchantsView extends DataView {
 	@Override
 	public void render() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

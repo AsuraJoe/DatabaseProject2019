@@ -103,11 +103,15 @@ public class ItemView extends DataView {
 			}
 			case "2":{
 				String proc="Call "+procs[1]+"(";
-						System.out.println("Please enter the new item_id for deletion");
+						System.out.println("Please enter the item_id for deletion");
 						proc+=(mx.nextLine());
 				proc+=");";
 				execute(proc);
 				return new ItemView(mod,connection);
+			}
+			case "3": {
+				System.out.println("Please enter the item_id you want to see instances for");
+				return new InstancesOfItemsView(mod,Integer.parseInt(mx.nextLine()), connection);
 			}
 			case "4": return reset();
 			default: break;
