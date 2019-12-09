@@ -29,6 +29,7 @@ insert INTO entity(entity_id,entity_name) Values(91,'Sheep');
 insert INTO entity(entity_id,entity_name) Values(92,'Cow');
 insert INTO entity(entity_id,entity_name) Values(93,'Chicken');
 insert INTO entity(entity_id,entity_name) Values(95,'Wolf');
+insert INTO entity(entity_id,entity_name) Values(100,'Horse');
 insert INTO entity(entity_id,entity_name) Values(120,'Villager');
 
 
