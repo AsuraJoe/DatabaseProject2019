@@ -322,21 +322,7 @@ insert INTO player(username, health, hunger, air) Values ('Devon', 20,7,12);
 
 /*insert mob*/
 /*idk what air is in here so all 12*/
-insert INTO mob(health, air) Values(20,12);
-insert INTO mob(health, air) Values(4,12);
-insert INTO mob(health, air) Values(10,12);
-insert INTO mob(health, air) Values(10,12);
-insert INTO mob(health, air) Values(15,12);
-insert INTO mob(health, air) Values(8,12);
-insert INTO mob(health, air) Values(40,12);
-insert INTO mob(health, air) Values(16,12);
-insert INTO mob(health, air) Values(20,12);
-insert INTO mob(health, air) Values(20,12);
-insert INTO mob(health, air) Values(20,12);
-insert INTO mob(health, air) Values(4,12);
-insert INTO mob(health, air) Values(20,12);
-insert INTO mob(health, air) Values(30,12);
-insert INTO mob(health, air) Values(10,12);
+
 
 /*armor_stand*/
 insert into armor_stand()values();
