@@ -8,7 +8,8 @@ import java.util.Scanner;
 import java.sql.SQLException;
 
 
-public class UserGrantView extends View {
+public class UserGrantView extends DataView {
+	protected String [] optQuerries = {"grant_mod_rights"};
 	
 	public UserGrantView() {
 		// TODO Auto-generated constructor stub
@@ -23,7 +24,7 @@ public class UserGrantView extends View {
 	}
 
 	@Override
-	public View display() {
+	public DataView display() {
 		// TODO Auto-generated method stub
 		for (int i=0; i<attrs.length;i++) 
 			System.out.printf("%25s-", attrs[i]);
@@ -35,7 +36,7 @@ public class UserGrantView extends View {
 		if(mx.nextLine().toLowerCase().equals("y")) {
 			System.out.println("Enter the index you want to grant rights for:");
 			x= Integer.parseInt(mx.nextLine());
-			execute(x);
+			execute(createQuerry(optQuerries[0],x));
 			return display();
 		}
 		System.out.println("Do you want to continue back to the menu(Type Y for yes)");
@@ -51,28 +52,20 @@ public class UserGrantView extends View {
 		
 	}
 	
-	public void execute(int index) {
-		Connection con = null;
-		Statement stmt = null;
-		try{  
-			con=DriverManager.getConnection(  
-			connection.connect(),connection.fetchUser(),connection.fetchPassword());  
-			stmt=con.createStatement();  
-			stmt.executeQuery(createQuerry(index));   
-			}catch(Exception e){ e.printStackTrace();}  
-		    finally {
-				try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-				try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
-			}
-	}
 	@Override
-	public View reset() {
+	public DataView reset() {
 		return new ModView(connection);
 		
 	}
 	
-	public String createQuerry (int index) {
-		return "Call grant_mod_rights("+index+")";
+	public String createQuerry (String proc, int index) {
+		return "Call "+proc+"("+index+")";
+	}
+
+	@Override
+	public void menu() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -23,4 +23,3 @@ drop table if exists creates_entity;
 drop table if exists entity_drops;
 drop table if exists structure_made_of;
 SET FOREIGN_KEY_CHECKS=1; 
-drop procedure if exists get_Instanceof_Item;

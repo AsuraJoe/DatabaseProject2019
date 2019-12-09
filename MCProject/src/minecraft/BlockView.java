@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 import java.sql.SQLException;
 
-public class BlockView extends View {
+public class BlockView extends DataView {
 	
 	public BlockView() {
 		// TODO Auto-generated constructor stub
@@ -33,7 +33,7 @@ public class BlockView extends View {
 		this.connection = con;
 	} 
 	@Override
-	public View display() {
+	public DataView display() {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		for (int i=0; i<attrs.length;i++) 
@@ -52,6 +52,13 @@ public class BlockView extends View {
 	public void render() {
 		// TODO Auto-generated method stub
 
+	}
+
+
+	@Override
+	public void menu() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -2,7 +2,7 @@ package minecraft;
 
 import java.util.Scanner;
 
-public class UserView extends View{
+public class UserView extends DataView{
 	
 
 	public UserView() {
@@ -27,13 +27,13 @@ public class UserView extends View{
 	}
 	
 	@Override
-	public View display() {
+	public DataView display() {
 		// TODO Auto-generated method stub
-		Integer x= null;
-		getMenu();
+		String x= null;
+		menu();
 		Scanner mx = new Scanner(System.in);
 		System.out.println("Please choose one of the options:");
-		x= Integer.parseInt(mx.nextLine());
+		x= mx.nextLine();
 		if (x!=null)
 			return getView(x);
 		return null;
@@ -44,24 +44,17 @@ public class UserView extends View{
 		// TODO Auto-generated method stub
 		
 	}
-	
-	public void getMenu() {
-		System.out.println("Choose an item: ");
-		System.out.println("1-items");
-		System.out.println("2-players");
-		System.out.println("3-blocks");
-	}
 
 	@Override
 	public void exec() {
 		// TODO Auto-generated method stub
 	}
 	
-	public View getView(int n){
+	public DataView getView( String n){
 		switch(n) {
-		case 1: return new ItemView(mod,connection);
-		case 2: return new PlayerView(mod,connection);
-		case 3: return new BlockView(mod,connection);
+		case "1": return new ItemView(mod,connection);
+		case "2": return new PlayerView(mod,connection);
+		case "3": return new BlockView(mod,connection);
 		default: break;
 		}
 		
@@ -69,9 +62,19 @@ public class UserView extends View{
 	}
 
 	@Override
-	public View reset() {
+	public DataView reset() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	@Override
+	public void menu() {
+		// TODO Auto-generated method stub
+		System.out.println("Choose an item: ");
+		System.out.println("1-items");
+		System.out.println("2-players");
+		System.out.println("3-blocks");
 	}
 
 }

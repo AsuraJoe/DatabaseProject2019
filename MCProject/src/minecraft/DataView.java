@@ -6,19 +6,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public abstract class View {
+public abstract class DataView {
 	
 	protected SQLConnector connection = new SQLConnector();
 	protected String querry;
 	protected String [] attrs;
-	protected String [] optQuerries;
 	protected int mod;
 	
 	
-	public abstract View display();
+	public abstract DataView display();
 	public abstract void render();
+	public abstract void menu();
 	
-	
+	public void execute ( String querry) {
+		Connection con = null;
+		Statement stmt = null;
+		try{  
+			con=DriverManager.getConnection(  
+			connection.connect(),connection.fetchUser(),connection.fetchPassword());  
+			stmt=con.createStatement();  
+			stmt.executeQuery(querry);  
+			}catch(Exception e){ e.printStackTrace();}  
+		    finally {
+				try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
+				try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
+			}
+	}
 	public void exec() {
 		Connection con = null;
 		Statement stmt = null;
@@ -43,7 +56,7 @@ public abstract class View {
 			}
 	};
 	
-	public View reset() {
+	public DataView reset() {
 		if (mod==1)
 			return new ModView(connection);
 		else if (mod==0)

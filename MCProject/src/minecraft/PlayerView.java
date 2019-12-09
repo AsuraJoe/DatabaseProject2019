@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 import java.sql.SQLException;
 
-public class PlayerView extends View {
+public class PlayerView extends DataView {
 	public PlayerView(SQLConnector con) {
 		// TODO Auto-generated constructor stub
 		this.attrs = new String[]{"instance_number","username","health","hunger"};
@@ -36,7 +36,7 @@ public class PlayerView extends View {
 	}
 
 	@Override
-	public View display() {
+	public DataView display() {
 		// TODO Auto-generated method stub
 		for (int i=0; i<attrs.length;i++) 
 			System.out.printf("%25s-", attrs[i]);
@@ -53,6 +53,13 @@ public class PlayerView extends View {
 	@Override
 	public void render() {
 		// TODO Auto-generated method stub
+	}
+
+
+	@Override
+	public void menu() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

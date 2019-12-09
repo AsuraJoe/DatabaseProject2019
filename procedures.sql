@@ -12,7 +12,7 @@ CREATE PROCEDURE Add_user(username VARCHAR(30), pass VARCHAR(45), email VARCHAR(
 BEGIN 
 INSERT INTO USER(username, pass, email) values(username, pass, email);
 END 
-//DELIMITER ;Add_userget_instanceOf_Item
+//DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE grant_mod_rights (user_id int)
@@ -38,4 +38,11 @@ BEGIN
 Select ec.instance_number, e.enchantment_name, ec.lv  from enchant ec, enchantment e
 WHERE ec.item_id = item_id;
 END
+//DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE Add_item(item_id int, item_name VARCHAR(40), placeable boolean )
+BEGIN 
+INSERT INTO Item(item_id, item_name, placeable) values(item_id, item_name, placeable);
+END 
 //DELIMITER ;

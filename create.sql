@@ -23,10 +23,11 @@ create table entity_instance (
     z float
 );
 create table item (
-    item_id int not null AUTO_INCREMENT,
+    item_id int unique not null AUTO_INCREMENT,
     item_name varchar(40) not null,
     primary key (item_id),
     max_stack int,
+    instances_count int default 0,
     placeable boolean
 );
 create table item_instance(

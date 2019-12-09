@@ -2,7 +2,7 @@ package minecraft;
 
 import java.util.Scanner;
 
-public class ModView extends View {
+public class ModView extends DataView {
 
 	public ModView() {
 		// TODO Auto-generated constructor stub
@@ -16,13 +16,13 @@ public class ModView extends View {
 	}
 
 	@Override
-	public View display() {
+	public DataView display() {
 		// TODO Auto-generated method stub
-		Integer x = null;
-		getMenu();
+		String x = null;
+		menu();
 		Scanner mx = new Scanner(System.in);
 		System.out.println("Please choose one of the options:");
-		x= Integer.parseInt(mx.nextLine());
+		x= mx.nextLine();
 		if (x!=null)
 			return getView(x);
 		return null;
@@ -34,18 +34,11 @@ public class ModView extends View {
 
 	}
 	
-	public void getMenu() {
-		System.out.println("-----Menu-----");
-		System.out.println("1-Grant User Mod rights");
-		System.out.println("2-View tables");
-		
-	}
 	
-	public View getView(int n ) {
+	public DataView getView(String n ) {
 		switch(n) {
-		case 1: return new UserGrantView(connection);
-		case 2: return new UserView(1,connection);
-		case 3: break;
+		case "1": return new UserGrantView(connection);
+		case "2": return new UserView(1,connection);
 		default: break;
 		}
 		System.out.println("Program end.");
@@ -60,9 +53,18 @@ public class ModView extends View {
 	}
 
 	@Override
-	public View reset() {
+	public DataView reset() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	@Override
+	public void menu() {
+		// TODO Auto-generated method stub
+		System.out.println("-----Menu-----");
+		System.out.println("1-Grant User Mod rights");
+		System.out.println("2-View tables");
 	}
 
 }

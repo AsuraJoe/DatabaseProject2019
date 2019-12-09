@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class Demo {
 
 	public static void main (String[] args)  {
-		View view = null;
+		DataView view = null;
 		SQLConnector connection = new SQLConnector();
 		User currUser = new User();
 		String userStr = null;
