@@ -7,31 +7,26 @@ import java.util.Scanner;
 import java.sql.SQLException;
 
 public class ItemView extends DataView {
-	public String[] optQuerries = {};
 	
 	public ItemView() {
 		// TODO Auto-generated constructor stub
-		this.attrs=new String[]{"item_id","item_name","max_stack","instances_count"};
-		this.querry = ("select * from item ");
+		preLoad();
 	}
 	
 	public ItemView(SQLConnector con) {
-		this.attrs=new String[]{"item_id","item_name","max_stack", "instances_count"};
-		this.querry = ("select * from item ");
+		preLoad();
 		this.connection = con;
 	}
 	
 	public ItemView(int m) {
 		// TODO Auto-generated constructor stub
-		this.attrs=new String[]{"item_id","item_name","max_stack", "instances_count"};
-		this.querry = ("select * from item ");
+		preLoad();
 		this.mod=m;
 	}
 	
 	public ItemView(int m,SQLConnector con) {
 		// TODO Auto-generated constructor stub
-		this.attrs=new String[]{"item_id","item_name","max_stack", "instances_count"};
-		this.querry = ("select * from item ");
+		preLoad();
 		this.mod=m;
 		this.connection=con;
 	}
@@ -63,6 +58,13 @@ public class ItemView extends DataView {
 	public void menu() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void preLoad() {
+		// TODO Auto-generated method stub
+		this.attrs=new String[]{"item_id","item_name","max_stack","instances_count"};
+		this.querry = ("select * from item ");
 	}
 
 	

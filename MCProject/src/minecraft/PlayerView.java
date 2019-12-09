@@ -9,29 +9,25 @@ import java.sql.SQLException;
 public class PlayerView extends DataView {
 	public PlayerView(SQLConnector con) {
 		// TODO Auto-generated constructor stub
-		this.attrs = new String[]{"instance_number","username","health","hunger"};
-		this.querry = ("select * from player");
+		preLoad();
 		this.connection= con;
 	}
 	
 	public PlayerView() {
 		// TODO Auto-generated constructor stub
-		this.attrs = new String[]{"instance_number","username","health","hunger"};
-		this.querry = ("select * from player");
+		preLoad();
 	}
 
 	public PlayerView(int m, SQLConnector con) {
 		// TODO Auto-generated constructor stub
-		this.attrs = new String[]{"instance_number","username","health","hunger"};
-		this.querry = ("select * from player");
+		preLoad();
 		this.mod = m;
 		this.connection= con;
 	}
 	
 	public PlayerView(int m) {
 		// TODO Auto-generated constructor stub
-		this.attrs = new String[]{"instance_number","username","health","hunger"};
-		this.querry = ("select * from player");
+		preLoad();
 		this.mod = m;
 	}
 
@@ -60,6 +56,13 @@ public class PlayerView extends DataView {
 	public void menu() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void preLoad() {
+		// TODO Auto-generated method stub
+		this.attrs = new String[]{"instance_number","username","health","hunger"};
+		this.querry = ("select * from player");
 	}
 
 

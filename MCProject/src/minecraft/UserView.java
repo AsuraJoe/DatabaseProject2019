@@ -57,7 +57,7 @@ public class UserView extends DataView{
 		case "3": return new BlockView(mod,connection);
 		default: break;
 		}
-		
+		System.out.println("Program end.");
 		return null;
 	}
 
@@ -75,6 +75,12 @@ public class UserView extends DataView{
 		System.out.println("1-items");
 		System.out.println("2-players");
 		System.out.println("3-blocks");
+	}
+
+	@Override
+	public void preLoad() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

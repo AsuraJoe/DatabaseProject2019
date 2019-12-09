@@ -11,12 +11,15 @@ public abstract class DataView {
 	protected SQLConnector connection = new SQLConnector();
 	protected String querry;
 	protected String [] attrs;
+	protected String [] procs;
+	protected String [] opts;
 	protected int mod;
 	
 	
 	public abstract DataView display();
 	public abstract void render();
 	public abstract void menu();
+	public abstract void preLoad();
 	
 	public void execute ( String querry) {
 		Connection con = null;

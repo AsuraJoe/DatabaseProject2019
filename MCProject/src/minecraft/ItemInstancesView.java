@@ -36,4 +36,10 @@ public class ItemInstancesView extends DataView {
 		
 	}
 
+	@Override
+	public void preLoad() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

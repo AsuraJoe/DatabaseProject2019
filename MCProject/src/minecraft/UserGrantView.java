@@ -9,17 +9,15 @@ import java.sql.SQLException;
 
 
 public class UserGrantView extends DataView {
-	protected String [] optQuerries = {"grant_mod_rights"};
+	protected String [] procs = {"grant_mod_rights"};
 	
 	public UserGrantView() {
 		// TODO Auto-generated constructor stub
-		this.attrs=new String[]{"user_id","username","email","moderator"};
-		this.querry = ("select * from user ");
+		preLoad();
 	}
 	
 	public UserGrantView(SQLConnector con) {
-		this.attrs=new String[]{"user_id","username","email","moderator"};
-		this.querry = ("select * from user ");
+		preLoad();
 		this.connection = con;
 	}
 
@@ -36,7 +34,7 @@ public class UserGrantView extends DataView {
 		if(mx.nextLine().toLowerCase().equals("y")) {
 			System.out.println("Enter the index you want to grant rights for:");
 			x= Integer.parseInt(mx.nextLine());
-			execute(createQuerry(optQuerries[0],x));
+			execute(createQuerry(procs[0],x));
 			return display();
 		}
 		System.out.println("Do you want to continue back to the menu(Type Y for yes)");
@@ -66,6 +64,14 @@ public class UserGrantView extends DataView {
 	public void menu() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void preLoad() {
+		// TODO Auto-generated method stub
+		this.attrs=new String[]{"user_id","username","email","moderator"};
+		this.procs=new String[]{"grant_mod_rights"};
+		this.querry = ("select * from user ");
 	}
 
 }

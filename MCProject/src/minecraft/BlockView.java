@@ -7,29 +7,24 @@ import java.util.Scanner;
 import java.sql.SQLException;
 
 public class BlockView extends DataView {
-	
 	public BlockView() {
 		// TODO Auto-generated constructor stub
-		this.attrs = new String[]{"block_id","block_name","transparent","gravity"};
-		this.querry = ("select * from block ");
+		preLoad();
 	}
 
 	public BlockView(int m) {
-		this.attrs = new String[]{"block_id","block_name","transparent","gravity"};
-		this.querry = ("select * from block ");
+		preLoad();
 		this.mod =m;
 	}
 	
 	public BlockView(int m, SQLConnector con) {
-		this.attrs = new String[]{"block_id","block_name","transparent","gravity"};
-		this.querry = ("select * from block ");
+		preLoad();
 		this.mod =m;
 		this.connection = con;
 	} 
 	
 	public BlockView(SQLConnector con) {
-		this.attrs = new String[]{"block_id","block_name","transparent","gravity"};
-		this.querry = ("select * from block ");
+		preLoad();
 		this.connection = con;
 	} 
 	@Override
@@ -59,6 +54,13 @@ public class BlockView extends DataView {
 	public void menu() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void preLoad() {
+		// TODO Auto-generated method stub
+		this.attrs = new String[]{"block_id","block_name","transparent","gravity"};
+		this.querry = ("select * from block ");
 	}
 
 }

@@ -67,4 +67,10 @@ public class ModView extends DataView {
 		System.out.println("2-View tables");
 	}
 
+	@Override
+	public void preLoad() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
