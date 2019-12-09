@@ -85,28 +85,28 @@ END
 DELIMITER //
 CREATE PROCEDURE Add_biome(name varchar(45))
 BEGIN 
-INSERT INTO biome(name varchar) values(name varchar);
+INSERT INTO biome(name) values(name);
 END 
 //DELIMITER ;                                                                 
                 
 DELIMITER //
 CREATE PROCEDURE Add_biome_blocks(name varchar(45), block_id int)
 BEGIN 
-INSERT INTO biome_blocks(name varchar, block_id) values(name varchar, block_id);
+INSERT INTO biome_blocks(name, block_id) values(name, block_id);
 END 
 //DELIMITER ;
                                         
 DELIMITER //
 CREATE PROCEDURE Add_structure(name varchar(45), biome varchar(45))
 BEGIN 
-INSERT INTO structure(name varchar, biome varchar) values(name varchar, biome varchar);
+INSERT INTO structure(name, biome) values(name, biome);
 END 
 //DELIMITER ;
                                                                
 DELIMITER //
 CREATE PROCEDURE Add_enchantment(enchantment_id int, enchantment_name varchar(40), max_level int)
 BEGIN 
-INSERT INTO enchantment(enchantment_id, enchantment_name varchar, max_level) values(enchantment_id, enchantment_name varchar, max_level);
+INSERT INTO enchantment(enchantment_id, enchantment_name, max_level) values(enchantment_id, enchantment_name, max_level);
 END 
 //DELIMITER ;
                                                                
@@ -118,9 +118,9 @@ END
 //DELIMITER ; 
                                                                
 DELIMITER //
-CREATE PROCEDURE Add_mob(instance_number int, mob_name varchar(45),mob_type varchar(45), health int, air int)
+CREATE PROCEDURE Add_mob( mob_name varchar(45),mob_type varchar(45), health int, air int)
 BEGIN 
-INSERT INTO mob(instance_number, mob_name, mob_type, health, air) values(instance_number, mob_name, mob_type, health, air);
+INSERT INTO mob(mob_name, mob_type, health, air) values(mob_name, mob_type, health, air);
 END 
 //DELIMITER ; 
                                                                
@@ -130,4 +130,57 @@ BEGIN
 INSERT INTO block_drops(block_id,  item_id) values(block_id,  item_id);
 END 
 //DELIMITER ;
-                                                                                                                            
+
+
+DELIMITER //
+CREATE PROCEDURE Add_player(username varchar(20), health int, hunger int, air int)
+BEGIN 
+INSERT INTO player(username, health, hunger, air) values(username, health, hunger, air);
+END 
+//DELIMITER ;
+
+/*Delete procs*/
+ 
+ DELIMITER //
+CREATE PROCEDURE delete_user(id int)
+BEGIN 
+Delete from `user` where `user_id` = id;
+END 
+//DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE delete_item(id int)
+BEGIN 
+Delete from `item` where `item_id` = id;
+END 
+//DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE delete_item_distance(id int)
+BEGIN 
+Delete from `item_instance` where `instance_number` = id;
+END 
+//DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE delete_entity(id int)
+BEGIN 
+Delete from `entity` where `entity_id` = id;
+END 
+//DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE delete_mob(id int)
+BEGIN 
+Delete from `mob` where `instance_number` = id;
+END 
+//DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE delete_player(id int)
+BEGIN 
+Delete from `player` where `instance_number` = id;
+END 
+//DELIMITER ;
+
+
