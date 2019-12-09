@@ -113,10 +113,15 @@ create table mob(
     primary key (instance_number),
     foreign key (instance_number) references entity_instance(instance_number),
     mob_name varchar(45),
-    mob_type varchar(45),
     health int,
-    air int, 
     constraint UC_mob unique (instance_number)
+);
+create table mob_properties(
+    entity_id int not null,
+    primary key (entity_id),
+    foreign key (entity_id) references entity (entity_id),
+    default_health int,
+    hostility varchar(45)
 );
 create table armor_stand(
     instance_number int not null AUTO_INCREMENT,
