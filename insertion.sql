@@ -22,8 +22,11 @@ insert INTO entity(entity_id,entity_name) Values(51,'Skeleton');
 insert INTO entity(entity_id,entity_name) Values(52,'Spider');
 insert INTO entity(entity_id,entity_name) Values(54,'Zombie');
 insert INTO entity(entity_id,entity_name) Values(55,'Slime');
+insert INTO entity(entity_id,entity_name) Values(56,'Ghast');
 insert INTO entity(entity_id,entity_name) Values(58,'Endermen');
+insert INTO entity(entity_id,entity_name) Values(59,'Cave Spider');
 insert INTO entity(entity_id,entity_name) Values(61,'Blaze');
+insert INTO entity(entity_id,entity_name) Values(68,'Guardian');
 insert INTO entity(entity_id,entity_name) Values(90,'Pig');
 insert INTO entity(entity_id,entity_name) Values(91,'Sheep');
 insert INTO entity(entity_id,entity_name) Values(92,'Cow');
@@ -304,25 +307,21 @@ insert INTO player(username, health, hunger, air) Values ('Devon', 20,7,12);
 
 /*insert mob*/
 /*idk what air is in here so all 12*/
-insert INTO mob(instance_id , health, air) Values('Cave spider', 'Monsters',20,12);
-insert INTO mob(instance_id, health, air) Values('Chicken', 93,4,12);
-insert INTO mob(instance_id, health, air) Values('Cow', 92,10,12);
-insert INTO mob(instance_id, health, air) Values('Cat', 'Peaceful',10,12);
-insert INTO mob(instance_id, health, air) Values('Horse', 'Monsters',15,12);
-insert INTO mob(instance_id, health, air) Values('Pufferfish', 'Defensive',3,12);
-insert INTO mob(instance_id, health, air) Values('Wolf', 'Animals',8,12);
-insert INTO mob(instance_id, health, air) Values('Panda', 'Animals',20,12);
-insert INTO mob(instance_id, health, air) Values('Enderman', 'Monsters',40,12);
-insert INTO mob(instance_id, health, air) Values('Spider', 'Monsters',16,12);
-insert INTO mob(instance_id, health, air) Values('Zombie Pigman', 'Monsters',20,12);
-insert INTO mob(instance_id, health, air) Values('Creeper', 'Hostile',20,12);
-insert INTO mob(instance_id, health, air) Values('Zombie', 'Hostile',20,12);
-insert INTO mob(instance_id, health, air) Values('Zombie Villager', 'Hostile',20,12);
-insert INTO mob(instance_id, health, air) Values('Slime', 'Hostile',4,12);
-insert INTO mob(instance_id, health, air) Values('NPC', 'Education Edition exclusive mobs',20,12);
-insert INTO mob(instance_id, health, air) Values('Blaze', 'Hostile',20,12);
-insert INTO mob(instance_id, health, air) Values('Guardian', 'Hostile',30,12);
-insert INTO mob(instance_id, health, air) Values('Ghast', 'Hostile',10,12);
+insert INTO mob(health, air) Values(20,12);
+insert INTO mob(health, air) Values(4,12);
+insert INTO mob(health, air) Values(10,12);
+insert INTO mob(health, air) Values(10,12);
+insert INTO mob(health, air) Values(15,12);
+insert INTO mob(health, air) Values(8,12);
+insert INTO mob(health, air) Values(40,12);
+insert INTO mob(health, air) Values(16,12);
+insert INTO mob(health, air) Values(20,12);
+insert INTO mob(health, air) Values(20,12);
+insert INTO mob(health, air) Values(20,12);
+insert INTO mob(health, air) Values(4,12);
+insert INTO mob(health, air) Values(20,12);
+insert INTO mob(health, air) Values(30,12);
+insert INTO mob(health, air) Values(10,12);
 
 /*armor_stand*/
 insert into armor_stand()values();
