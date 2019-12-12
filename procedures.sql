@@ -183,4 +183,19 @@ Delete from `player` where `instance_number` = id;
 END 
 //DELIMITER ;
 
+DELIMITER //
+create procedure view_biomes()
+begin
+select i.* from biome i;
+end
+//DELIMITER 
+                                             
+DELIMITER //
+create procedure view_chunks()
+begin
+select j.lower_x, j.lower_y, j.lower_z, i.name
+from biome i inner join chunk j on (i.name = j.biome);
+end
+//DELIMITER 
+                                             
 
