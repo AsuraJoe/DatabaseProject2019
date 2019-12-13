@@ -200,7 +200,7 @@ end
 DELIMITER //
 create procedure view_chunks()
 begin
-select j.lower_x, j.lower_y, j.lower_z, i.name
+select j.lower_x, j.lower_z, i.name
 from biome i inner join chunk j on (i.name = j.biome);
 end
 //DELIMITER 
