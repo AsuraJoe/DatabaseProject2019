@@ -206,4 +206,13 @@ from block_drops j inner join item i on j.item_id = i.item_id
 where j.item_id = id;
 end
 //DELIMITER
+                                             
+DELIMITER //
+create procedure view_created_entities(id int)
+begin
+select i.entity_name
+from creates_entity j inner join entity i on j.entity_id = i.entity_id
+where j.item_id = id;
+end
+//DELIMITER
                                            
