@@ -78,7 +78,7 @@ END
 DELIMITER //
 CREATE PROCEDURE Add_block_instance(instance_number int, breaking_stage int)
 BEGIN 
-INSERT INTO block_instance(instance_number, breaking_stage) values(instance_number, breaking_stage);
+INSERT INTO block_instance(instance_number, breaking_stage, x, y, z) values(instance_number, breaking_stage,(select(floor(rand()*(256)-128))),(select(floor(rand()*(256)-128))),(select(floor(rand()*(256)-128))));
 END 
 //DELIMITER ;            
                                                                
