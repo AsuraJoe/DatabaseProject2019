@@ -57,7 +57,7 @@ END
 DELIMITER //
 CREATE PROCEDURE Add_entity(entity_id int, entity_name varchar(30))
 BEGIN 
-INSERT INTO entity(entity_id, entity_name, x , y , y) values(entity_id, entity_name, (select rand()*(256)-128,select rand()*(256)-128,select rand()*(256)-128);
+INSERT INTO entity(entity_id, entity_name) values(entity_id, entity_name;
 END 
 //DELIMITER ;  
                                                                
