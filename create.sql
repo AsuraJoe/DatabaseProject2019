@@ -102,7 +102,6 @@ create table inventory(
 create table player(
     instance_number int unique not null AUTO_INCREMENT,
     primary key (instance_number),
-    foreign key (instance_number) references entity_instance(instance_number),
     username varchar(45) unique not null,
     health int,
     hunger int,
@@ -112,7 +111,6 @@ create table mob(
     instance_number int  not null AUTO_INCREMENT,
     primary key (instance_number),
     foreign key (instance_number) references entity_instance(instance_number),
-    mob_name varchar(45),
     health int,
     constraint UC_mob unique (instance_number)
 );

@@ -26,7 +26,7 @@ END
 DELIMITER //
 CREATE PROCEDURE get_instanceOf_Item (item_id int)
 BEGIN 
-Select i.instance_number, i.stack, i.item_id, ii.item_name from item_instance i, item ii
+Select i.instance_number, i.stack, i.item_id, i.enchant_count, ii.item_name from item_instance i, item ii
 WHERE i.item_id = item_id AND i.item_id = ii.item_id;
 END
 //DELIMITER ;
@@ -144,43 +144,49 @@ END
  DELIMITER //
 CREATE PROCEDURE delete_user(id int)
 BEGIN 
-Delete from `user` where `user_id` = id;
+Delete from user where user_id = id;
 END 
 //DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE delete_item(id int)
 BEGIN 
-Delete from `item` where `item_id` = id;
+Delete from item where item_id = id;
 END 
 //DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE delete_item_distance(id int)
+CREATE PROCEDURE delete_item_instance(id int)
 BEGIN 
-Delete from `item_instance` where `instance_number` = id;
+Delete from item_instance u where u.instance_number = id;
 END 
 //DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE delete_entity(id int)
 BEGIN 
-Delete from `entity` where `entity_id` = id;
+Delete from entity where entity_id = id;
 END 
 //DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE delete_mob(id int)
 BEGIN 
-Delete from `mob` where `instance_number` = id;
+Delete from mob where instance_number = id;
 END 
 //DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE delete_player(id int)
 BEGIN 
-Delete from `player` where `instance_number` = id;
+Delete from player where instance_number = id;
 END 
 //DELIMITER ;
 
+DELIMITER //
+CREATE PROCEDURE delete_enchant(id int, instance int)
+BEGIN 
+Delete from enchant where instance_number = instance and item_instance_number = id;
+END 
+//DELIMITER ;
 

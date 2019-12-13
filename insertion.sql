@@ -51,7 +51,7 @@ insert into mob_properties(entity_id,default_health,hostility) values(120,15,'pa
 
 
 /*entity_instance*/
-insert INTO entity_instance( entity_id,x,y,z)Values(1,1.1,1.2,1.3);
+insert INTO entity_instance( entity_id,x,y,z)Values(50,1.1,1.2,1.3);
 
 /*insert item*/
 /*Placable means it can be placed*/ 

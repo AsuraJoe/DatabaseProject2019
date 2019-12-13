@@ -20,6 +20,12 @@ public class UserView extends DataView{
 		this.mod = m;
 	}
 	
+	@Override
+	public void render() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public UserView(int m, SQLConnector con) {
 		// TODO Auto-generated constructor stub
 		this.mod = m;
@@ -40,12 +46,6 @@ public class UserView extends DataView{
 	}
 
 	@Override
-	public void render() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void exec() {
 		// TODO Auto-generated method stub
 	}
@@ -55,6 +55,8 @@ public class UserView extends DataView{
 		case "1": return new ItemView(mod,connection);
 		case "2": return new PlayerView(mod,connection);
 		case "3": return new BlockView(mod,connection);
+		case "4": return new Entity(mod,connection);
+		case "5": return new Mob(mod,connection);
 		default: break;
 		}
 		System.out.println("Program end.");
@@ -75,6 +77,8 @@ public class UserView extends DataView{
 		System.out.println("1-items");
 		System.out.println("2-players");
 		System.out.println("3-blocks");
+		System.out.println("4-entities");
+		System.out.println("5-mobs");
 	}
 
 	@Override

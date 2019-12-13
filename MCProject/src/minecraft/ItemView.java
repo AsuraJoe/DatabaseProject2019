@@ -89,7 +89,7 @@ public class ItemView extends DataView {
 						proc+=(mx.nextLine());
 					}
 					else if (i==1) {
-						System.out.println("Please enter the new item's " +attrs[i]+" (0 for false, 1 for true)"+":");
+						System.out.println("Please enter the new item's " +attrs[i]+":");
 						proc+=("'"+mx.nextLine()+"',");
 					}
 					else {

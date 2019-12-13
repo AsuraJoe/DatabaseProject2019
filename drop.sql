@@ -22,4 +22,5 @@ drop table if exists creates_block;
 drop table if exists creates_entity;
 drop table if exists entity_drops;
 drop table if exists structure_made_of;
+drop table if exists mob_properties;
 SET FOREIGN_KEY_CHECKS=1; 

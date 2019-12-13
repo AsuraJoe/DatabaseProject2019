@@ -79,7 +79,6 @@ public class PlayerView extends DataView {
 			case "1":{
 				System.out.println("Please enter your new player name:");
 				String proc="Call "+procs[0]+"("+"'"+mx.nextLine()+"'"+")";
-				System.out.println(proc);
 				execute(proc);
 				return new PlayerView(mod,connection);
 			}
@@ -101,6 +100,7 @@ public class PlayerView extends DataView {
 			default: break;
 			}
 		}
+		System.out.println("Program ended");
 		return null;
 	}
 
