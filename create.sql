@@ -117,12 +117,6 @@ create table mob_properties(
     default_health int,
     hostility varchar(45)
 );
-create table armor_stand(
-    instance_number int not null AUTO_INCREMENT,
-    primary key (instance_number),
-    foreign key (instance_number) references entity_instance(instance_number),
-    constraint UC_stand unique(instance_number)
-);
 create table minecart(
     instance_number int not null AUTO_INCREMENT,
     primary key (instance_number),
