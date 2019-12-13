@@ -55,12 +55,8 @@ create table block_instance (
 );
 create table chunk (
     lower_x int,
-    lower_y int,
     lower_z int,
-    primary key(lower_x,lower_y,lower_z),
-    upper_x int,
-    upper_y int,
-    upper_z int
+    primary key(lower_x,lower_z)
 );
 create table biome (
     name varchar(45) not null,
