@@ -197,5 +197,13 @@ select j.lower_x, j.lower_z, i.name
 from biome i inner join chunk j on (i.name = j.biome);
 end
 //DELIMITER 
-                                             
-
+                                           
+DELIMITER //
+create procedure view_block_drops(id int)
+begin
+select i.item_name
+from block_drops j inner join item i on j.item_id = i.item_id
+where j.item_id = id;
+end
+//DELIMITER
+                                           
