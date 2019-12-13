@@ -184,9 +184,26 @@ END
 //DELIMITER ;
 
 DELIMITER //
+<<<<<<< HEAD
 CREATE PROCEDURE delete_enchant(id int, instance int)
 BEGIN 
 Delete from enchant where instance_number = instance and item_instance_number = id;
 END 
 //DELIMITER ;
+=======
+create procedure view_biomes()
+begin
+select i.* from biome i;
+end
+//DELIMITER 
+                                             
+DELIMITER //
+create procedure view_chunks()
+begin
+select j.lower_x, j.lower_y, j.lower_z, i.name
+from biome i inner join chunk j on (i.name = j.biome);
+end
+//DELIMITER 
+                                             
+>>>>>>> 9d748aee054baeeee570a847929690f95bad63c3
 
