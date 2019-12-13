@@ -64,7 +64,7 @@ END
 DELIMITER //
 CREATE PROCEDURE Add_entity_instance(entity_id int)
 BEGIN 
-INSERT INTO entity_instance(entity_id) values(entity_id);
+INSERT INTO entity_instance(entity_id,x,y,z) values(entity_id,(select rand()*(256)-128),(select rand()*(256)-128),(select rand()*(256)-128));
 END 
 //DELIMITER ;
                                                                
