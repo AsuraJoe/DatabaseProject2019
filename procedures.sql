@@ -221,7 +221,16 @@ create procedure view_created_entities(id int)
 begin
 select i.entity_name
 from creates_entity j inner join entity i on j.entity_id = i.entity_id
-where j.item_id = id;
+where j.entity_id = id;
 end
 //DELIMITER
-                                           
+                     
+DELIMITER //
+create procedure view_created_blocks(id int)
+begin
+select i.block_name
+from creates_block j inner join block i on j.block_id = i.block_id
+where j.block_id = id;
+end
+//DELIMITER
+                  
