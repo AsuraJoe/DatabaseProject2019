@@ -204,6 +204,45 @@ select j.lower_x, j.lower_z, i.name
 from biome i inner join chunk j on (i.name = j.biome);
 end
 //DELIMITER 
+<<<<<<< HEAD
                                              
 >>>>>>> 9d748aee054baeeee570a847929690f95bad63c3
+=======
+                                           
+DELIMITER //
+create procedure view_block_drops(id int)
+begin
+select i.item_name
+from block_drops j inner join item i on j.item_id = i.item_id
+where j.item_id = id;
+end
+//DELIMITER
+>>>>>>> aa7edc44913b4186d1bd4dff6d7ec9704e340668
 
+DELIMITER //
+create procedure view_entity_drops(id int)
+begin
+select i.item_name
+from entity_drops j inner join item i on j.item_id = i.item_id
+where j.entity_id = id;
+end
+//DELIMITER
+                                             
+DELIMITER //
+create procedure view_created_entities(id int)
+begin
+select i.entity_name
+from creates_entity j inner join entity i on j.entity_id = i.entity_id
+where j.entity_id = id;
+end
+//DELIMITER
+                     
+DELIMITER //
+create procedure view_created_blocks(id int)
+begin
+select i.block_name
+from creates_block j inner join block i on j.block_id = i.block_id
+where j.block_id = id;
+end
+//DELIMITER
+                  
