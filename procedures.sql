@@ -184,13 +184,13 @@ END
 //DELIMITER ;
 
 DELIMITER //
-<<<<<<< HEAD
 CREATE PROCEDURE delete_enchant(id int, instance int)
 BEGIN 
 Delete from enchant where instance_number = instance and item_instance_number = id;
 END 
+//DELIMITER
+                                             
 //DELIMITER ;
-=======
 create procedure view_biomes()
 begin
 select i.* from biome i;
