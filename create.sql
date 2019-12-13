@@ -158,9 +158,5 @@ create table structure_made_of(
     name varchar(45) not null,
     foreign key (name) references structure (name),
     block_id int not null,
-    foreign key (block_id) references block(block_id),
-    x int,
-    y int,
-    z int
-    
+    foreign key (block_id) references block(block_id),    
 );
