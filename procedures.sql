@@ -208,9 +208,9 @@ END
 //DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE delete_player(id int)
+CREATE PROCEDURE delete_player(id varchar(45))
 BEGIN 
-Delete from player where instance_number = id;
+Delete from player where username = id;
 END 
 //DELIMITER ;
 
@@ -257,7 +257,7 @@ end
 DELIMITER //
 CREATE PROCEDURE view_inventory(uname varchar(45))
 begin
-select i.slot, k.item_name, j.stack 
+select i.slot, k.item_name, j.stack, j.instance_number 
 from inventory i inner join item_instance j on i.item_instance_number = j.instance_number
 inner join item k on j.item_id = k.item_id
 where i.username = uname;

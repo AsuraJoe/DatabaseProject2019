@@ -191,7 +191,6 @@ insert INTO block(block_id, block_name, transparent, gravity) Values(78, 'Snow',
 
 
 /*insert block_instance*/
-insert INTO block_instance(breaking_stage,x,y,z) Values(1,2,3,4);
 
 /*chunk*/
 
@@ -325,7 +324,7 @@ insert INTO player(username, health, hunger, air) Values ('Devon', 20,7,12);
 
 
 /*armor_stand*/
-insert into armor_stand()values();
+
 
 /*insert minecrat*/
 insert INTO minecart (damage) Values(6);

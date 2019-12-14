@@ -55,13 +55,7 @@ create table block_instance (
     y int,
     z int
 );
-create table chunk (
-    lower_x int,
-    lower_z int,
-    biome_name varchar(45),
-    foreign key (biome_name) references biome(name), 
-    primary key(lower_x,lower_z)
-);
+
 create table biome (
     name varchar(45) not null,
     primary key (name)
@@ -72,6 +66,15 @@ create table biome_blocks(
     block_id int,
     foreign key (block_id) references block(block_id) on delete cascade
 );
+
+create table chunk (
+    lower_x int,
+    lower_z int,
+    biome_name varchar(45),
+    foreign key (biome_name) references biome(name), 
+    primary key(lower_x,lower_z)
+);
+
 create table structure(
     name varchar(45) unique not null,
     biome varchar(45),
@@ -92,19 +95,20 @@ foreign key (item_instance_number) references item_instance(instance_number) on 
 lv int not null,
 constraint UC_enchant unique (enchantment_id, item_instance_number)
 );
-create table inventory(
-    username varchar(45),
-    foreign key (username) references player (username) on delete cascade,
-    slot int,
-    item_instance_number int,
-    foreign key (item_instance_number) references item_instance (instance_number) on delete cascade
-);
+
 create table player(
     username varchar(45) unique not null,
     primary key (username),
     health int,
     hunger int,
     air int
+);
+create table inventory(
+    username varchar(45),
+    foreign key (username) references player (username) on delete cascade,
+    slot int,
+    item_instance_number int,
+    foreign key (item_instance_number) references item_instance (instance_number) on delete cascade
 );
 create table mob(
     instance_number int  not null AUTO_INCREMENT,
@@ -154,6 +158,6 @@ create table entity_drops(
 create table structure_made_of(
     name varchar(45) not null,
     foreign key (name) references structure (name) on delete cascade,
-    block_id int not null,
-    foreign key (block_id) references block(block_id) on delete set null,    
+    block_id int,
+    foreign key (block_id) references block(block_id) on delete set null  
 );

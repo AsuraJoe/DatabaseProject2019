@@ -3,16 +3,27 @@ package minecraft;
 import java.util.Scanner;
 
 public class BiomeBlocks extends DataView {
-	
-	private String biome;
-	
-	public BiomeBlocks(int m, String biome, SQLConnector con) {
+
+	public BiomeBlocks() {
 		// TODO Auto-generated constructor stub
-		this.mod=m;
-		this.biome=biome;
-		this.connection=con;
 		preLoad();
 	}
+
+	public BiomeBlocks(int m) {
+		preLoad();
+		this.mod =m;
+	}
+	
+	public BiomeBlocks(int m, SQLConnector con) {
+		preLoad();
+		this.mod =m;
+		this.connection = con;
+	} 
+	
+	public BiomeBlocks(SQLConnector con) {
+		preLoad();
+		this.connection = con;
+	} 
 
 	@Override
 	public DataView display() {
@@ -21,7 +32,7 @@ public class BiomeBlocks extends DataView {
 			System.out.printf("%25s-", attrs[i]);
 		System.out.println();
 		exec();
-		menu();
+		menu();		
 		Scanner mx = new Scanner(System.in);
 		return getView(mx.nextLine());
 	}
@@ -35,59 +46,58 @@ public class BiomeBlocks extends DataView {
 	@Override
 	public void menu() {
 		// TODO Auto-generated method stub
-		if(mod==1) {
-			System.out.println("1-Add instance");
-			System.out.println("2-Remove Instance");
-			System.out.println("3-Enchant an Item");
-			System.out.println("4-Return to menu");
-		}
-		else {
-			System.out.println("1-Add instance");
-			System.out.println("2-Return to menu");
+		if(mod == 1) {
+			System.out.println("1-Add Entity Drops");
+			System.out.println("2-Remove Entity Drops");
+			System.out.println("3-Return to menu");
 		}
 	}
 
 	@Override
 	public void preLoad() {
 		// TODO Auto-generated method stub
-		this.attrs = new String[] {"instance_number","stack","item_id","item_name","enchant_count"};
-		this.querry = "call get_instanceOf_Item('"+this.biome+"')";
-		this.procs = new String[] {"Add_item_instance","delete_item_instance"};
+		this.attrs = new String[]{"entity_id","entity_name","item_id","item_name"};
+		this.querry = ("select c.entity_id, c.item_id,e.entity_name, b.item_name \r\n" + 
+				"from entity e inner join entity_drops c on (c.entity_id = e.entity_id)inner join item b on (c.item_id = b.item_id)");
+		this.procs = new String[] {};
 	}
 
 	@Override
 	public DataView getView(String n) {
 		// TODO Auto-generated method stub
 		Scanner mx = new Scanner(System.in);
-		if(mod==1) {
+		if(mod ==1) {
 			switch(n) {
 			case "1":{
-				System.out.println("Please enter the stack of your instance:");
-				String proc="Call "+procs[0]+"("+mx.nextLine()+",'"+biome+"')";
-				execute(proc);
-				return new BiomeBlocks(mod,biome,connection);
-			}
-			case "2":{
-				String proc="Call "+procs[1]+"(";
-				System.out.println("Please enter the instance_number for deletion");
+				String proc="Call "+procs[0]+"('";
+				System.out.println("Please enter the id of your entity");
 				proc+=(mx.nextLine());
-				proc+=");";
-				System.out.println(proc);
-				execute(proc);
-				return new BiomeBlocks(mod,biome,connection);
+				System.out.println("Please enter the id of your item");
+				proc+=(mx.nextLine());
+		        proc+="');";
+		        execute(proc);
+				return new BiomeBlocks(mod,connection);
 			}
-			case "4": return reset();
-			default: break;
+			case "2": {
+				String proc="Call "+procs[1]+"('";
+				System.out.println("Please enter the name of your new biome");
+				proc+=(mx.nextLine());
+		        proc+="');";
+		        execute(proc);
+				return new BiomeBlocks(mod,connection);
+				
 			}
+			case "3": {
+				return reset();
+			}
+			} 
 		}
 		else {
 			
-			switch(n) {
-			case "2": return reset();
-			default: break;
-			}
 		}
 		System.out.println("Program ended");
 		return null;
-}
+	}
+
+
 }

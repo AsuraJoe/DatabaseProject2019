@@ -55,7 +55,8 @@ public class PlayerView extends DataView {
 		if(mod==1) {
 			System.out.println("1-Add Player");
 			System.out.println("2-Remove Player");
-			System.out.println("3-Return to menu");
+			System.out.println("3-View Player's Inventory");
+			System.out.println("4-Return to menu");
 		}
 		else 
 			System.out.println("Do you want to return to the menu? (y for yes)");
@@ -90,7 +91,11 @@ public class PlayerView extends DataView {
 				execute(proc);
 				return new PlayerView(mod,connection);
 			}
-			case "3": return reset();
+			case "3": {
+				System.out.println("Please enter the username you want to view inventory with");
+				return new Inventory(mod,mx.nextLine(), connection);
+			}
+			case "4": return reset();
 			default: break;
 			}
 		}
