@@ -12,6 +12,16 @@ public class ItemEnchantsView extends DataView {
 		this.connection=con;
 		preLoad();
 	}
+	
+	public ItemEnchantsView(int m, int id, SQLConnector con, String[] attrs, String qrr) {
+		// TODO Auto-generated constructor stub
+		this.mod=m;
+		this.num=id;
+		this.connection=con;
+		this.attrs= attrs;
+		this.querry =qrr;
+		System.out.println(qrr);
+	}
 
 	@Override
 	public DataView display() {
@@ -42,8 +52,8 @@ public class ItemEnchantsView extends DataView {
 	public void preLoad() {
 		// TODO Auto-generated method stub
 		this.attrs = new String[] {"enchantment_id","enchantment_name","max_level"};
-		this.querry = "select * from enchantments";
-		this.procs = new String[] {"Add_enchant","delete_enchant"};
+		this.querry = "select * from enchantment";
+		this.procs = new String[] {"Add_Enchant","delete_enchant"};
 	}
 
 	@Override
@@ -54,14 +64,19 @@ public class ItemEnchantsView extends DataView {
 		case "1":{
 			String proc="Call "+procs[0]+"(";
 			System.out.println("Please enter id of your chosen enchantment:");
-			procs[0]+=mx.nextLine()+",";
-			System.out.println("Please enter the chosen item instance:");
-			procs[0]+=mx.nextLine()+",";
+			proc+=mx.nextLine()+",";
+			proc+=num+",";
 			System.out.println("Please enter the level of your enchantment:");
-			procs[0]+=mx.nextLine();
+			proc+=mx.nextLine();
 			proc+=");";
+			System.out.println(proc);
 			execute(proc);
-			return new ItemEnchantsView(mod,num,connection);
+			System.out.println("Enchantments of Item#" + num);
+			this.querry="call";
+			this.attrs = new String [] {};
+			exec();
+			return new ItemEnchantsView(mod,num,connection,new String[] {"item_instance_number","enchantment_name","lv"},
+					"call get_instance_enchant("+num+")");
 		}
 		case "2":{
 			String proc="Call "+procs[1]+"(";
@@ -70,7 +85,8 @@ public class ItemEnchantsView extends DataView {
 			proc+=");";
 			System.out.println(proc);
 			execute(proc);
-			return new ItemEnchantsView(mod,num,connection);
+			return new ItemEnchantsView(mod,num,connection,new String[] {"item_instance_number","enchantment_name","lv"},
+					"call get_instance_enchant("+num+")");
 		}
 		case "3": return reset();
 		default: break;

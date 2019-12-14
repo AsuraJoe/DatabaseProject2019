@@ -194,7 +194,7 @@ insert INTO block(block_id, block_name, transparent, gravity) Values(78, 'Snow',
 insert INTO block_instance(breaking_stage,x,y,z) Values(1,2,3,4);
 
 /*chunk*/
-insert INTO chunk(lower_x,lower_y,lower_z,upper_x,upper_y,upper_z)values(1,2,3,4,5,6);
+
 
 /*biome*/
 insert INTO biome(name) values ('Ocean');

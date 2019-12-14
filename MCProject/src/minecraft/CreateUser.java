@@ -1,5 +1,6 @@
 package minecraft;
 
+import java.io.Console;
 import java.util.Scanner;
 
 public class CreateUser implements McQuerry {
@@ -36,6 +37,13 @@ public class CreateUser implements McQuerry {
 	@Override
 	public void prompt() {
 		// TODO Auto-generated method stub
+		Console con = System.console();
+		if(con != null) {
+			System.out.println("Username");
+			setUsername(con.readLine());
+			setPassword(new String(con.readPassword("Password: ")));
+		}
+		else {
 		Scanner mx = new Scanner(System.in);
 		System.out.println("Do you want to create a new account(Type Y for yes)");
 		if(mx.nextLine().toLowerCase().equals("y")) {
@@ -48,6 +56,7 @@ public class CreateUser implements McQuerry {
 				System.out.println("New Password:");
 				setPassword(mx.nextLine());
 			}
+		}
 		}
 	}
 	@Override

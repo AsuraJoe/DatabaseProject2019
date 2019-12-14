@@ -2,13 +2,14 @@ package minecraft;
 
 import java.util.Scanner;
 
-public class InstancesOfItemsView extends DataView{
-	private int item_id;
+public class BiomeBlocks extends DataView {
 	
-	public InstancesOfItemsView(int m, int id, SQLConnector con) {
+	private String biome;
+	
+	public BiomeBlocks(int m, String biome, SQLConnector con) {
 		// TODO Auto-generated constructor stub
 		this.mod=m;
-		this.item_id=id;
+		this.biome=biome;
 		this.connection=con;
 		preLoad();
 	}
@@ -50,7 +51,7 @@ public class InstancesOfItemsView extends DataView{
 	public void preLoad() {
 		// TODO Auto-generated method stub
 		this.attrs = new String[] {"instance_number","stack","item_id","item_name","enchant_count"};
-		this.querry = "call get_instanceOf_Item("+this.item_id+")";
+		this.querry = "call get_instanceOf_Item('"+this.biome+"')";
 		this.procs = new String[] {"Add_item_instance","delete_item_instance"};
 	}
 
@@ -62,9 +63,9 @@ public class InstancesOfItemsView extends DataView{
 			switch(n) {
 			case "1":{
 				System.out.println("Please enter the stack of your instance:");
-				String proc="Call "+procs[0]+"("+mx.nextLine()+","+item_id+")";
+				String proc="Call "+procs[0]+"("+mx.nextLine()+",'"+biome+"')";
 				execute(proc);
-				return new InstancesOfItemsView(mod,item_id,connection);
+				return new BiomeBlocks(mod,biome,connection);
 			}
 			case "2":{
 				String proc="Call "+procs[1]+"(";
@@ -73,11 +74,7 @@ public class InstancesOfItemsView extends DataView{
 				proc+=");";
 				System.out.println(proc);
 				execute(proc);
-				return new InstancesOfItemsView(mod,item_id,connection);
-			}
-			case "3": {
-				System.out.println("Please enter the instance you want to enchant");
-				return new ItemEnchantsView(mod,Integer.parseInt(mx.nextLine()),connection);
+				return new BiomeBlocks(mod,biome,connection);
 			}
 			case "4": return reset();
 			default: break;
@@ -86,18 +83,11 @@ public class InstancesOfItemsView extends DataView{
 		else {
 			
 			switch(n) {
-			case "1":{
-				System.out.println("Please enter the stack of your instance:");
-				String proc="Call "+procs[0]+"("+mx.nextLine()+","+item_id+")";
-				execute(proc);
-				return new InstancesOfItemsView(mod,item_id,connection);
-			}
 			case "2": return reset();
 			default: break;
 			}
 		}
 		System.out.println("Program ended");
 		return null;
-	}
-
+}
 }

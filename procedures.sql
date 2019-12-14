@@ -31,12 +31,12 @@ WHERE i.item_id = item_id AND i.item_id = ii.item_id;
 END
 //DELIMITER ;
 
-
+Drop procedure if exists get_instance_enchant;
 DELIMITER //
 CREATE PROCEDURE get_instance_enchant (num int)
 BEGIN 
-Select ec.instance_number, e.enchantment_name, ec.lv  from enchant ec, enchantment e
-WHERE ec.item_id = item_id;
+Select ec.item_instance_number, e.enchantment_name, ec.lv  from enchant ec, enchantment e
+WHERE ec.item_instance_number = num and e.enchantment_id=ec.enchantment_id;
 END
 //DELIMITER ;
 
@@ -109,7 +109,7 @@ BEGIN
 INSERT INTO enchantment(enchantment_id, enchantment_name, max_level) values(enchantment_id, enchantment_name, max_level);
 END 
 //DELIMITER ;
-                                                               
+							
 DELIMITER //
 CREATE PROCEDURE Add_enchant (enchantment_id int, item_instance_number int, lv int)
 BEGIN 
@@ -184,61 +184,9 @@ END
 //DELIMITER ;
 
 DELIMITER //
-<<<<<<< HEAD
-CREATE PROCEDURE delete_enchant(id int, instance int)
+CREATE PROCEDURE delete_enchant(eid int, iid int)
 BEGIN 
-Delete from enchant where instance_number = instance and item_instance_number = id;
+Delete from enchant where enchantment_id=eid and item_instance_number =iid;
 END 
 //DELIMITER ;
-=======
-create procedure view_biomes()
-begin
-select i.* from biome i;
-end
-//DELIMITER 
-                                             
-DELIMITER //
-create procedure view_chunks()
-begin
-select j.lower_x, j.lower_z, i.name
-from biome i inner join chunk j on (i.name = j.biome);
-end
-//DELIMITER 
 
-                                           
-DELIMITER //
-create procedure view_block_drops(id int)
-begin
-select i.item_name
-from block_drops j inner join item i on j.item_id = i.item_id
-where j.item_id = id;
-end
-//DELIMITER
-
-DELIMITER //
-create procedure view_entity_drops(id int)
-begin
-select i.item_name
-from entity_drops j inner join item i on j.item_id = i.item_id
-where j.entity_id = id;
-end
-//DELIMITER
-                                             
-DELIMITER //
-create procedure view_created_entities(id int)
-begin
-select i.entity_name
-from creates_entity j inner join entity i on j.entity_id = i.entity_id
-where j.entity_id = id;
-end
-//DELIMITER
-                     
-DELIMITER //
-create procedure view_created_blocks(id int)
-begin
-select i.block_name
-from creates_block j inner join block i on j.block_id = i.block_id
-where j.block_id = id;
-end
-//DELIMITER
-                  

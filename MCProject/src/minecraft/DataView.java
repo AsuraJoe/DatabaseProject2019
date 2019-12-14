@@ -32,6 +32,7 @@ public abstract class DataView {
 			stmt.executeQuery(querry);  
 			}catch(Exception e){ e.printStackTrace();}  
 		    finally {
+		    	System.out.println("Successfully Resolved");
 				try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
 				try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
 			}

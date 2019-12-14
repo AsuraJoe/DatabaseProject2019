@@ -57,6 +57,7 @@ public class UserView extends DataView{
 		case "3": return new BlockView(mod,connection);
 		case "4": return new Entity(mod,connection);
 		case "5": return new Mob(mod,connection);
+		case "6": return new Biome(mod,connection);
 		default: break;
 		}
 		System.out.println("Program end.");
@@ -79,6 +80,7 @@ public class UserView extends DataView{
 		System.out.println("3-blocks");
 		System.out.println("4-entities");
 		System.out.println("5-mobs");
+		System.out.println("6-biomes");
 	}
 
 	@Override

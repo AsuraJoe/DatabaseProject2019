@@ -1,5 +1,6 @@
 package minecraft;
 
+import java.io.Console;
 import java.util.Scanner;
 
 public class UserLogin implements McQuerry {
@@ -29,11 +30,22 @@ public class UserLogin implements McQuerry {
 	
 	public void prompt(){
 		System.out.println("-----Login-----");
-		Scanner mx = new Scanner(System.in);
-		System.out.println("Username:");
-		setUsername(mx.nextLine());
-		System.out.println("Password:");
+		String s;
+		Console con = System.console();
+		if(con != null) {
+			System.out.println("Username");
+			setUsername(con.readLine());
+			s = new String(con.readPassword("Password: "));
+			System.out.println(s);
+			setPassword(s);
+		}
+		else {
+			Scanner mx = new Scanner(System.in);
+			System.out.println("Username:");
+			setUsername(mx.nextLine());
+			System.out.println("Password:");
 		setPassword(mx.nextLine());
+		}
 	}
 
 	@Override
