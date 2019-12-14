@@ -90,7 +90,14 @@ CREATE PROCEDURE Add_biome(name varchar(45))
 BEGIN 
 INSERT INTO biome(name) values(name);
 END 
-//DELIMITER ;                                                                 
+//DELIMITER ;   
+					
+DELIMITER //
+CREATE procedure delete_biome(name varchar(45))
+begin
+delete from biome where biome.name = name;
+end;
+//DELIMITER ;  
                 
 DELIMITER //
 CREATE PROCEDURE Add_biome_block(name varchar(45), block_id int)
