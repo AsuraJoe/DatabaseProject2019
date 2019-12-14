@@ -59,7 +59,7 @@ create table chunk (
     lower_x int,
     lower_z int,
     biome_name varchar(45),
-    foreign key (biome_name) references biome(name) on delete set null, 
+    foreign key (biome_name) references biome(name), 
     primary key(lower_x,lower_z)
 );
 create table biome (
