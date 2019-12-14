@@ -55,11 +55,14 @@ END
 //DELIMITER ;
                                                                
 DELIMITER //
-CREATE PROCEDURE Add_entity(entity_id int, entity_name varchar(30))
+CREATE PROCEDURE Add_entity(entity_id int, entity_name varchar(30),mob bool)
 BEGIN 
-INSERT INTO entity(entity_id, entity_name) values(entity_id, entity_name;
-END 
-//DELIMITER ;  
+INSERT INTO entity(entity_id, entity_name) values(entity_id, entity_name);
+if(mob) 
+then insert into mob_properties(entity_id, default_health, hostility) values (entity_id,20,'Passive');
+end if;
+end;
+//DELIMITER ;   
                                                                
 DELIMITER //
 CREATE PROCEDURE Add_entity_instance(entity_id int)
