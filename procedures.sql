@@ -177,13 +177,6 @@ END
 //DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE delete_block(id int)
-BEGIN 
-Delete from block where block_id = id;
-END 
-//DELIMITER ;
-
-DELIMITER //
 CREATE PROCEDURE delete_item_instance(id int)
 BEGIN 
 Delete from item_instance u where u.instance_number = id;
@@ -245,4 +238,26 @@ from biome i inner join chunk j on (i.name = j.biome_name);
 end
 //DELIMITER 
 
+DELIMITER //
+CREATE PROCEDURE view_inventory(uname varchar(45))
+begin
+select i.slot, k.item_name, j.stack 
+from inventory i inner join item_instance on i.instance_number = j.instance_number
+inner join k on j.item_id = k.item_id
+where i.username = uname;
+end
+//DELIMITER ;
 
+DELIMITER //
+CREATE PROCEDURE inventory_insert(inst int, uname varchar(45))
+begin
+declare v1 int;
+set v1 = 1;
+while (select * from inventory i where i.username = uname)
+do set v1 = v1 + 1;
+end while;
+if v1 < 31
+then insert into inventory (item_instance_number, username, slot) values (inst, uname, v1);
+end if;
+end
+//DELIMITER ;
