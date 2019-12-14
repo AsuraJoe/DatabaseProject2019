@@ -196,15 +196,15 @@ BEGIN
 Delete from enchant where enchantment_id=eid and item_instance_number =iid;
 END 
 //DELIMITER;
-                                             
-//DELIMITER ;
 
+                                             
+DELIMITER// 
 create procedure view_biomes()
 begin
 select i.* from biome i;
 end
-//DELIMITER 
-                                             
+//DELIMITER;
+									
 DELIMITER //
 CREATE PROCEDURE view_biome_blocks(bname varchar(45))
 begin
