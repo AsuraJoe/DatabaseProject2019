@@ -90,10 +90,17 @@ END
 //DELIMITER ;                                                                 
                 
 DELIMITER //
-CREATE PROCEDURE Add_biome_blocks(name varchar(45), block_id int)
+CREATE PROCEDURE Add_biome_block(name varchar(45), block_id int)
 BEGIN 
 INSERT INTO biome_blocks(name, block_id) values(name, block_id);
 END 
+//DELIMITER ;
+                                        
+DELIMITER //
+CREATE PROCEDURE delete_biome_block(id int, bname varchar(45))
+begin
+delete from biome_blocks where name = bname and block_id = id;
+end
 //DELIMITER ;
                                         
 DELIMITER //
@@ -213,7 +220,7 @@ DELIMITER //
 create procedure view_chunks()
 begin
 select j.lower_x, j.lower_z, i.name
-from biome i inner join chunk j on (i.name = j.biome);
+from biome i inner join chunk j on (i.name = j.biome_name);
 end
 //DELIMITER 
 
