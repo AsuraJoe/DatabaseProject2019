@@ -109,6 +109,13 @@ BEGIN
 INSERT INTO structure(name, biome) values(name, biome);
 END 
 //DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE view_structures()
+begin
+select * from structure;
+end
+//DELIMITER ;
                                                                
 DELIMITER //
 CREATE PROCEDURE Add_enchantment(enchantment_id int, enchantment_name varchar(40), max_level int)
