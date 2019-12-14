@@ -61,6 +61,7 @@ public class UserView extends DataView{
 		case "7": return new EntityDrops(mod,connection);
 		case "8": return new BlockDrops(mod,connection);
 		case "9": return new BiomeBlocks(mod,connection);
+		case "10": return new Structure(mod,connection);
 		default: break;
 		}
 		System.out.println("Program end.");

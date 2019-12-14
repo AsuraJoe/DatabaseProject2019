@@ -32,7 +32,9 @@ public class Entity extends DataView {
 	public void menu() {
 		// TODO Auto-generated method stub
 		System.out.println("1-Create entity");
-		System.out.println("3-Return to menu");
+		System.out.println("2-Delete Entity");
+		System.out.println("3-Insert a new instance");
+		System.out.println("4-Return to menu");
 	}
 
 	@Override
@@ -40,7 +42,7 @@ public class Entity extends DataView {
 		// TODO Auto-generated method stub
 		this.attrs=new String[]{"entity_id","entity_name"};
 		this.querry = ("select * from entity ");
-		this.procs = new String[]{"Add_entity","delete-entity","Add_entity_instance",""};
+		this.procs = new String[]{"Add_entity","delete_entity","Add_entity_instance",""};
 	}
 
 	@Override
@@ -50,27 +52,29 @@ public class Entity extends DataView {
 		switch(n) {
 		case "1":{
 		String proc="Call "+procs[0]+"(";
-		for (int i=0; i<attrs.length;i++) {
-			if (i==1) {
-				System.out.println("Please enter the new item's " +attrs[i]+" (0 for false, 1 for true)"+":");
-				proc+=("'"+mx.nextLine()+"'");
-			}
-			else {
-				System.out.println("Please enter the new item's " +attrs[i]+":");
-				proc+=(mx.nextLine()+",");
-			}
-		}
+		System.out.println("Please enter the entity id"+":");
+		proc+=(mx.nextLine()+",");
+		System.out.println("Please enter the entity name"+":");
+		proc+=("'"+mx.nextLine()+"',");
+		System.out.println("Is is a mob(0 for false, 1 for true)"+":");
+		proc+=(mx.nextLine());
 		proc+=");";
 		execute(proc);
 		return new Entity(mod,connection);
 		}
-		case "2": {
-			System.out.println("Please enter id of your chosen entity");
+		case "2":{
+			System.out.println("Please enter id of your chosen entity to remove");
 			String proc="Call "+procs[1]+"("+mx.nextLine()+")";
 			execute(proc);
-			return reset();
+			return new Entity(mod,connection);
 		}
-		case "3": return reset();
+		case "3": {
+			System.out.println("Please enter id to generate instance");
+			String proc="Call "+procs[2]+"("+mx.nextLine()+")";
+			execute(proc);
+			return new Entity(mod,connection);
+		}
+		case "4": return reset();
 		default: break;
 		}
 		System.out.println("Program ended");

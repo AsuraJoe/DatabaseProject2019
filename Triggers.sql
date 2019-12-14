@@ -44,7 +44,13 @@ END
 //DELIMITER ;
 
 DELIMITER //
-
+CREATE Trigger on_insert_minecart BEFORE INSERT ON minecart
+FOR EACH ROW
+BEGIN
+INSERT INTO entity_instance(entity_id) VALUES(42);
+SET NEW.instance_number =  last_insert_id() ;
+END 
+//DELIMITER ;
 
 DELIMITER //
 CREATE Trigger on_insert_entity_instance after INSERT ON entity_instance
