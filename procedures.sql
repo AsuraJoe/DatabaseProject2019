@@ -248,6 +248,13 @@ end
 //DELIMITER 
 
 DELIMITER //
+CREATE procedure add_chunk(x int, z int, biome varchar(45))
+begin
+insert into chunk(lower_x,lower_y,biome_name) values (x-(x%16),y-(y%16), biome);
+end
+//DELIMITER
+
+DELIMITER //
 CREATE PROCEDURE view_inventory(uname varchar(45))
 begin
 select i.slot, k.item_name, j.stack 
@@ -278,3 +285,5 @@ begin
 delete from inventory where inventory.item_instance_number = inst;
 end
 //DELIMITER ;
+
+							  
