@@ -49,7 +49,7 @@ public class Biome extends DataView {
 		if(mod == 1) {
 			System.out.println("1-Add Biome");
 			System.out.println("2-Remove Biome");
-			System.out.println("3-Return to menu");
+			System.out.println("4-Return to menu");
 		}
 		else {
 			System.out.println("Do you want to continue back to the menu(Type Y for yes)");
@@ -86,7 +86,7 @@ public class Biome extends DataView {
 		        execute(proc);
 				return new Biome(mod,connection);	
 			}
-			case "3": {
+			case "4": {
 				return reset();
 			}
 			} 

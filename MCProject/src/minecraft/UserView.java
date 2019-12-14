@@ -83,6 +83,9 @@ public class UserView extends DataView{
 		System.out.println("5-mobs");
 		System.out.println("6-biomes");
 		System.out.println("7-entity drop");
+		System.out.println("8-block drop");
+		System.out.println("9-biome blocks");
+		System.out.println("10-Structure");
 	}
 
 	@Override

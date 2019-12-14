@@ -83,10 +83,10 @@ public class PlayerView extends DataView {
 				return new PlayerView(mod,connection);
 			}
 			case "2":{
-				String proc="Call "+procs[1]+"(";
-				System.out.println("Please enter the instance_number for deletion");
+				String proc="Call "+procs[1]+"('";
+				System.out.println("Please enter the name of the player you want to delete:");
 				proc+=(mx.nextLine());
-				proc+=");";
+				proc+="');";
 				execute(proc);
 				return new PlayerView(mod,connection);
 			}
