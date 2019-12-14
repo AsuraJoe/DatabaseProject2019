@@ -91,16 +91,15 @@ lv int not null,
 constraint UC_enchant unique (enchantment_id, item_instance_number)
 );
 create table inventory(
-    entity_instance_number int AUTO_INCREMENT,
-    foreign key (entity_instance_number) references entity_instance (instance_number),
+    username varchar(45),
+    foreign key (username) references player (username),
     slot int,
     item_instance_number int,
     foreign key (item_instance_number) references item_instance (instance_number)
 );
 create table player(
-    instance_number int unique not null AUTO_INCREMENT,
-    primary key (instance_number),
     username varchar(45) unique not null,
+    primary key (username),
     health int,
     hunger int,
     air int
