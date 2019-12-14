@@ -197,6 +197,13 @@ select i.* from biome i;
 end
 //DELIMITER 
                                              
+//DELIMITER ;
+create procedure view_biome_blocks(name varchar(45))
+//DELIMITER 
+            
+add_biome_block()
+delete_biome_block()
+                                             
 DELIMITER //
 create procedure view_chunks()
 begin
