@@ -109,6 +109,13 @@ BEGIN
 INSERT INTO structure(name, biome) values(name, biome);
 END 
 //DELIMITER ;
+							       
+DELIMITER //
+CREATE PROCEDURE delete_structure(sname varchar(45))
+begin
+delete from structure where name = sname;
+end
+//DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE view_structures()
