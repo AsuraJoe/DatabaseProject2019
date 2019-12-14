@@ -177,6 +177,13 @@ END
 //DELIMITER ;
 
 DELIMITER //
+CREATE PROCEDURE delete_block(id int)
+BEGIN 
+Delete from block where block_id = id;
+END 
+//DELIMITER ;
+
+DELIMITER //
 CREATE PROCEDURE delete_item_instance(id int)
 BEGIN 
 Delete from item_instance u where u.instance_number = id;
