@@ -51,6 +51,9 @@ public class Biome extends DataView {
 			System.out.println("2-Remove Biome");
 			System.out.println("3-Return to menu");
 		}
+		else {
+			System.out.println("Do you want to continue back to the menu(Type Y for yes)");
+		}
 	}
 
 	@Override
@@ -58,20 +61,30 @@ public class Biome extends DataView {
 		// TODO Auto-generated method stub
 		this.attrs = new String[]{"name"};
 		this.querry = ("select * from biome");
-		this.procs = new String[] {};
+		this.procs = new String[] {"Add_Biome","delete_biome"};
 	}
 
 	@Override
 	public DataView getView(String n) {
 		// TODO Auto-generated method stub
+		Scanner mx = new Scanner(System.in);
 		if(mod ==1) {
 			switch(n) {
 			case "1":{
+				String proc="Call "+procs[0]+"('";
+				System.out.println("Please enter the name of your new biome");
+				proc+=(mx.nextLine());
+		        proc+="');";
+		        execute(proc);
 				return new Biome(mod,connection);
 			}
 			case "2": {
-				return new Biome(mod,connection);
-				
+				String proc="Call "+procs[1]+"('";
+				System.out.println("Please enter biome you want to delete");
+				proc+=(mx.nextLine());
+		        proc+="');";
+		        execute(proc);
+				return new Biome(mod,connection);	
 			}
 			case "3": {
 				return reset();
@@ -79,7 +92,9 @@ public class Biome extends DataView {
 			} 
 		}
 		else {
-			
+			switch(n) {
+			case "y": return reset();
+			}
 		}
 		System.out.println("Program ended");
 		return null;

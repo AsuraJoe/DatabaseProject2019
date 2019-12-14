@@ -47,8 +47,8 @@ public class EntityDrops extends DataView {
 	public void menu() {
 		// TODO Auto-generated method stub
 		if(mod == 1) {
-			System.out.println("1-Add EntityDrops");
-			System.out.println("2-Remove EntityDrops");
+			System.out.println("1-Add Entity Drops");
+			System.out.println("2-Remove Entity Drops");
 			System.out.println("3-Return to menu");
 		}
 	}
