@@ -248,13 +248,21 @@ end
 //DELIMITER 
 
 DELIMITER //
+CREATE procedure add_chunk(x int, z int, biome varchar(45))
+begin
+insert into chunk(lower_x,lower_y,biome_name) values (x-(x%16),y-(y%16), biome);
+end
+//DELIMITER
+
+DELIMITER //
 CREATE PROCEDURE view_inventory(uname varchar(45))
 begin
 select i.slot, k.item_name, j.stack 
-from inventory i inner join item_instance on i.instance_number = j.instance_number
-inner join k on j.item_id = k.item_id
+from inventory i inner join item_instance j on i.item_instance_number = j.instance_number
+inner join item k on j.item_id = k.item_id
 where i.username = uname;
 end
+
 //DELIMITER ;
 
 DELIMITER //
@@ -262,7 +270,7 @@ CREATE PROCEDURE inventory_insert(inst int, uname varchar(45))
 begin
 declare v1 int;
 set v1 = 1;
-while (select * from inventory i where i.username = uname)
+while exists(select * from inventory i where i.username = uname and i.slot = v1)
 do set v1 = v1 + 1;
 end while;
 if v1 < 31
@@ -277,3 +285,5 @@ begin
 delete from inventory where inventory.item_instance_number = inst;
 end
 //DELIMITER ;
+
+							  
