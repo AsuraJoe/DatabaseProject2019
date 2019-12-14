@@ -261,3 +261,10 @@ then insert into inventory (item_instance_number, username, slot) values (inst, 
 end if;
 end
 //DELIMITER ;
+							  
+DELIMITER //
+CREATE PROCEDURE inventory_remove(inst int)
+begin
+delete from inventory where inventory.item_instance_number = inst;
+end
+//DELIMITER ;
