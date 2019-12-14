@@ -197,11 +197,15 @@ select i.* from biome i;
 end
 //DELIMITER 
                                              
+DELIMITER //
+CREATE PROCEDURE view_biome_blocks(bname varchar(45))
+begin
+select i.block_id, i.block_name
+from block i inner join biome_blocks j on i.block_id = j.block_id
+where j.name = bname;
+end
 //DELIMITER ;
-create procedure view_biome_blocks(name varchar(45))
-//DELIMITER 
             
-add_biome_block()
 delete_biome_block()
                                              
 DELIMITER //
