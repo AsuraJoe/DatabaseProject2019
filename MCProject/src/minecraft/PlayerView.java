@@ -65,7 +65,7 @@ public class PlayerView extends DataView {
 	@Override
 	public void preLoad() {
 		// TODO Auto-generated method stub
-		this.attrs = new String[]{"instance_number","username","health","hunger"};
+		this.attrs = new String[]{"username","health","hunger"};
 		this.querry = ("select * from player");
 		this.procs = new String[] {"Add_player","delete_player"};
 	}
