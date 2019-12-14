@@ -67,7 +67,7 @@ public class BlockView extends DataView {
 		// TODO Auto-generated method stub
 		this.attrs = new String[]{"Block_id","Block_name","transparent","gravity"};
 		this.querry = ("select * from Block ");
-		this.procs = new String [] {"Add_block",""};
+		this.procs = new String [] {"Add_block","delete_block"};
 	}
 
 	@Override
@@ -96,7 +96,6 @@ public class BlockView extends DataView {
 					}
 				}
 				proc+=");";
-				System.out.println(proc);
 				execute(proc);
 				return new BlockView(mod,connection);
 			}
