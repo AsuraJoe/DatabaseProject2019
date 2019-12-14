@@ -56,8 +56,9 @@ public class EntityDrops extends DataView {
 	@Override
 	public void preLoad() {
 		// TODO Auto-generated method stub
-		this.attrs = new String[]{"name"};
-		this.querry = ("call viewEntityDrop()");
+		this.attrs = new String[]{"entity_id","entity_name","item_id","item_name"};
+		this.querry = ("select c.entity_id, c.item_id,e.entity_name, b.item_name \r\n" + 
+				"from entity e inner join entity_drops c on (c.entity_id = e.entity_id)inner join item b on (c.item_id = b.item_id)");
 		this.procs = new String[] {};
 	}
 
