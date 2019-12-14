@@ -117,12 +117,6 @@ create table mob_properties(
     default_health int,
     hostility varchar(45)
 );
-create table armor_stand(
-    instance_number int not null AUTO_INCREMENT,
-    primary key (instance_number),
-    foreign key (instance_number) references entity_instance(instance_number),
-    constraint UC_stand unique(instance_number)
-);
 create table minecart(
     instance_number int not null AUTO_INCREMENT,
     primary key (instance_number),
@@ -158,9 +152,5 @@ create table structure_made_of(
     name varchar(45) not null,
     foreign key (name) references structure (name),
     block_id int not null,
-    foreign key (block_id) references block(block_id),
-    x int,
-    y int,
-    z int
-    
+    foreign key (block_id) references block(block_id),    
 );

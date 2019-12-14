@@ -72,10 +72,8 @@ public class ItemEnchantsView extends DataView {
 			System.out.println(proc);
 			execute(proc);
 			System.out.println("Enchantments of Item#" + num);
-			this.querry="call";
-			this.attrs = new String [] {};
-			exec();
-			return new ItemEnchantsView(mod,num,connection,new String[] {"item_instance_number","enchantment_name","lv"},
+			return new ItemEnchantsView(mod,num,connection,new String[] {"item_instance_number"
+					+ "","enchantment_name","lv"},
 					"call get_instance_enchant("+num+")");
 		}
 		case "2":{

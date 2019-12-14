@@ -57,14 +57,14 @@ END
 DELIMITER //
 CREATE PROCEDURE Add_entity(entity_id int, entity_name varchar(30))
 BEGIN 
-INSERT INTO entity(entity_id, entity_name) values(entity_id, entity_name);
+INSERT INTO entity(entity_id, entity_name) values(entity_id, entity_name;
 END 
 //DELIMITER ;  
                                                                
 DELIMITER //
 CREATE PROCEDURE Add_entity_instance(entity_id int)
 BEGIN 
-INSERT INTO entity_instance(entity_id) values(entity_id);
+INSERT INTO entity_instance(entity_id,x,y,z) values(entity_id,(select rand()*(256)-128),(select rand()*(256)-128),(select rand()*(256)-128));
 END 
 //DELIMITER ;
                                                                
@@ -78,7 +78,7 @@ END
 DELIMITER //
 CREATE PROCEDURE Add_block_instance(instance_number int, breaking_stage int)
 BEGIN 
-INSERT INTO block_instance(instance_number, breaking_stage) values(instance_number, breaking_stage);
+INSERT INTO block_instance(instance_number, breaking_stage, x, y, z) values(instance_number, breaking_stage,(select(floor(rand()*(256)-128))),(select(floor(rand()*(256)-128))),(select(floor(rand()*(256)-128))));
 END 
 //DELIMITER ;            
                                                                
@@ -188,5 +188,33 @@ CREATE PROCEDURE delete_enchant(eid int, iid int)
 BEGIN 
 Delete from enchant where enchantment_id=eid and item_instance_number =iid;
 END 
+//DELIMITER;
+                                             
 //DELIMITER ;
+
+create procedure view_biomes()
+begin
+select i.* from biome i;
+end
+//DELIMITER 
+                                             
+DELIMITER //
+CREATE PROCEDURE view_biome_blocks(bname varchar(45))
+begin
+select i.block_id, i.block_name
+from block i inner join biome_blocks j on i.block_id = j.block_id
+where j.name = bname;
+end
+//DELIMITER ;
+            
+delete_biome_block()
+                                             
+DELIMITER //
+create procedure view_chunks()
+begin
+select j.lower_x, j.lower_z, i.name
+from biome i inner join chunk j on (i.name = j.biome);
+end
+//DELIMITER 
+
 
