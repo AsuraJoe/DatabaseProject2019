@@ -2,25 +2,25 @@ package minecraft;
 
 import java.util.Scanner;
 
-public class EntityDrops extends DataView {
+public class BlockDrops extends DataView {
 
-	public EntityDrops() {
+	public BlockDrops() {
 		// TODO Auto-generated constructor stub
 		preLoad();
 	}
 
-	public EntityDrops(int m) {
+	public BlockDrops(int m) {
 		preLoad();
 		this.mod =m;
 	}
 	
-	public EntityDrops(int m, SQLConnector con) {
+	public BlockDrops(int m, SQLConnector con) {
 		preLoad();
 		this.mod =m;
 		this.connection = con;
 	} 
 	
-	public EntityDrops(SQLConnector con) {
+	public BlockDrops(SQLConnector con) {
 		preLoad();
 		this.connection = con;
 	} 
@@ -76,7 +76,7 @@ public class EntityDrops extends DataView {
 				proc+=(mx.nextLine());
 		        proc+="');";
 		        execute(proc);
-				return new EntityDrops(mod,connection);
+				return new BlockDrops(mod,connection);
 			}
 			case "2": {
 				String proc="Call "+procs[1]+"('";
@@ -84,7 +84,7 @@ public class EntityDrops extends DataView {
 				proc+=(mx.nextLine());
 		        proc+="');";
 		        execute(proc);
-				return new EntityDrops(mod,connection);
+				return new BlockDrops(mod,connection);
 				
 			}
 			case "3": {
