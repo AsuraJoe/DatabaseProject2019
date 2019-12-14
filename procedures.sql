@@ -210,8 +210,7 @@ BEGIN
 Delete from enchant where enchantment_id=eid and item_instance_number =iid;
 END 
 //DELIMITER;
-
-                                             
+                                       
 DELIMITER// 
 create procedure view_biomes()
 begin

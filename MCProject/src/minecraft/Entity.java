@@ -40,7 +40,7 @@ public class Entity extends DataView {
 		// TODO Auto-generated method stub
 		this.attrs=new String[]{"entity_id","entity_name"};
 		this.querry = ("select * from entity ");
-		this.procs = new String[]{"Add_entity","Add_entity_instance"};
+		this.procs = new String[]{"Add_entity","delete-entity","Add_entity_instance",""};
 	}
 
 	@Override
